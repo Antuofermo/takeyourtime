@@ -12,5 +12,6 @@ export default createGlobalStyle`
     font-size: 16px;
     line-height: 1.4;
     height: 100vh;
+    
   }
 `
