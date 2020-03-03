@@ -9,8 +9,6 @@ export default createGlobalStyle`
     margin: 0;
     padding: 15px;
     font-family: sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
     height: 100vh;
     
   }

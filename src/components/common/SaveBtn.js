@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components/macro'
 
 export default function SaveBtn() {
-  return <SaveStyled>Save</SaveStyled>
+  return <SaveBtnStyled>Save</SaveBtnStyled>
 }
 
-const SaveStyled = styled.button`
+const SaveBtnStyled = styled.button`
   padding: 10px 50px;
   font-size: 16px;
   color: #e4c026;

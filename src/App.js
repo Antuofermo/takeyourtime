@@ -7,7 +7,7 @@ function App() {
   const [activities, setActivities] = useState([])
   return (
     <>
-      <Header>Add your activities</Header>
+      <HeaderStyled>Add your activities</HeaderStyled>
       <Form activities={activities} setActivities={setActivities} />
       <Card activities={activities} />
     </>
@@ -16,7 +16,7 @@ function App() {
 
 export default App
 
-const Header = styled.h1`
+const HeaderStyled = styled.h1`
   text-align: center;
   font-size: 21px;
 `
