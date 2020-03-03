@@ -13,6 +13,7 @@ const SaveStyled = styled.button`
   border-radius: 8px;
   box-shadow: 2px 2px 4px grey;
   border: 1px solid #1a1919;
+  cursor: pointer;
 
   :hover {
     box-shadow: none;

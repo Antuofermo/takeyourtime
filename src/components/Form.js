@@ -1,14 +1,15 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import SaveBtn from './utils/SaveBtn'
+import SaveBtn from './common/SaveBtn'
 
 export default function Form({ activities, setActivities }) {
   return (
-    <FormStyled onSubmit={handleSubmit}>
+    <FormStyled onSubmit={handleSubmit} data-testid="form">
       <InputStyled
         autoFocus
         type="text"
         name="activities"
+        maxLength="100"
         placeholder="ex. Learn React"
       />
       <SaveBtn />
