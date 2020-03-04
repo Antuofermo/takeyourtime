@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import SaveBtn from './common/SaveBtn'
-import CategoryBtn from './common/CategorySelect'
+import CategorySelect from './common/CategorySelect'
 import ActivityInput from './common/ActivityInput'
 
 export default function Form({ stateActivities, setActivities, categories }) {
   return (
     <FormStyled onSubmit={handleSubmit}>
       <ActivityInput />
-      <CategoryBtn categories={categories} />
+      <CategorySelect categories={categories} />
       <SaveBtn />
     </FormStyled>
   )

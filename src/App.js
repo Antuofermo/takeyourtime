@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Form from './components/Form'
-import Card from './components/Card/Cards'
+import Cards from './components/Card/Cards'
 import styled from 'styled-components/macro'
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
         categories={categories}
         setActivities={setActivities}
       />
-      <Card activities={activities} categories={categories} />
+      <Cards activities={activities} categories={categories} />
     </>
   )
 }

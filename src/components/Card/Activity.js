@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 export default function Activity({ activity }) {
   return (
     <ListStyled>
-      <ActivityStyled key={activity.name}>{activity.name}</ActivityStyled>
+      <ActivityStyled>{activity.name}</ActivityStyled>
     </ListStyled>
   )
 }

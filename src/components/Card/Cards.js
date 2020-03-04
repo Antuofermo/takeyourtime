@@ -2,16 +2,17 @@ import React from 'react'
 import Activity from './Activity'
 import styled from 'styled-components/macro'
 import Category from './Category'
+import { uid } from 'react-uid'
 
 export default function Cards({ activities, categories }) {
   return categories.map(category => (
-    <CardStyled key={category}>
+    <CardStyled key={uid(category)}>
       <Category category={category} />
       <ActivitySection>
         {activities
           .filter(activity => activity.category === category)
           .map(activity => (
-            <Activity activity={activity} />
+            <Activity activity={activity} key={uid(activity)} />
           ))}
       </ActivitySection>
     </CardStyled>
@@ -31,10 +32,4 @@ const CardStyled = styled.div`
   margin: 30px 0;
   height: 180px;
   border-radius: 8px;
-  /* 
-  box-shadow: 1px 1px 3px grey inset; */
-
-  :hover {
-    box-shadow: none;
-  }
 `
