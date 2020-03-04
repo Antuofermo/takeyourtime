@@ -9,5 +9,6 @@ export default createGlobalStyle`
     margin: 0;
     padding: 48px;
     height: 100vh;
+    font-family: Lucida, sans-serif; 
   }
 `
