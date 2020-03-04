@@ -19,7 +19,7 @@ const SelectStyled = styled.select`
   padding: 15px 40px;
   width: 250px;
   height: 48px;
-  padding: 10px
+  padding: 10px;
   font-size: 10px;
   appearance: none;
   background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
