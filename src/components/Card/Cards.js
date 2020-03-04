@@ -7,9 +7,11 @@ export default function Cards({ activities, categories }) {
   return categories.map(category => (
     <CardStyled key={category}>
       <Category category={category} />
-      {/* {activities.map(activity => (
-        <Activity activity={activity} />
-      ))} */}
+      {activities
+        .filter(activity => activity.category === category)
+        .map(activity => (
+          <Activity activity={activity} />
+        ))}
     </CardStyled>
   ))
 }

@@ -4,7 +4,10 @@ import Card from './components/Card/Cards'
 import styled from 'styled-components/macro'
 
 function App() {
-  const [activities, setActivities] = useState([])
+  const [activities, setActivities] = useState([
+    { category: 'Professional time', name: 'Work' },
+    { category: 'Obligatory time', name: 'Sleep' },
+  ])
   const categories = [
     'Professional time',
     'Obligatory time',
@@ -12,15 +15,12 @@ function App() {
     'Self time',
     'Non-productive time',
   ]
-  let activity = [
-    { category: 'Professional Time', name: 'Work' },
-    { category: 'Obligatory time', name: 'Sleep' },
-  ]
+
   return (
     <>
       <HeaderStyled>Add your activities</HeaderStyled>
       <Form
-        activities={activities}
+        stateActivities={activities}
         categories={categories}
         setActivities={setActivities}
       />

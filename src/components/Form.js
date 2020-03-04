@@ -4,7 +4,7 @@ import SaveBtn from './common/SaveBtn'
 import CategoryBtn from './common/CategorySelect'
 import ActivityInput from './common/ActivityInput'
 
-export default function Form({ activities, setActivities, categories }) {
+export default function Form({ stateActivities, setActivities, categories }) {
   return (
     <FormStyled onSubmit={handleSubmit}>
       <ActivityInput />
@@ -17,12 +17,11 @@ export default function Form({ activities, setActivities, categories }) {
     event.preventDefault()
     const form = event.target
     setActivities([
-      ...activities,
+      ...stateActivities,
       { name: form.activities.value, category: form.categories.value },
     ])
     form.reset()
     form.focus()
-    console.log(activities)
   }
 }
 
