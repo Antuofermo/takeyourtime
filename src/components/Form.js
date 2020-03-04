@@ -1,25 +1,25 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import SaveBtn from './common/SaveBtn'
+import CategorySelect from './common/CategorySelect'
+import ActivityInput from './common/ActivityInput'
 
-export default function Form({ activities, setActivities }) {
+export default function Form({ stateActivities, setActivities, categories }) {
   return (
-    <FormStyled onSubmit={handleSubmit} data-testid="form">
-      <InputStyled
-        autoFocus
-        type="text"
-        name="activities"
-        maxLength="100"
-        placeholder="ex. Learn React"
-      />
+    <FormStyled onSubmit={handleSubmit}>
+      <ActivityInput />
+      <CategorySelect categories={categories} />
       <SaveBtn />
     </FormStyled>
   )
 
   function handleSubmit(event) {
     event.preventDefault()
-    setActivities([...activities, event.target.activities.value])
     const form = event.target
+    setActivities([
+      ...stateActivities,
+      { name: form.activities.value, category: form.categories.value },
+    ])
     form.reset()
     form.focus()
   }
@@ -30,9 +30,4 @@ const FormStyled = styled.form`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-`
-const InputStyled = styled.input`
-  border: 1px solid black;
-  border-radius: 8px;
-  padding: 15px 40px;
 `

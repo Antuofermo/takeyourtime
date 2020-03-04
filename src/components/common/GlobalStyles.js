@@ -7,9 +7,8 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    padding: 15px;
-    font-family: sans-serif;
+    padding: 48px;
     height: 100vh;
-    
+    font-family: Lucida, sans-serif; 
   }
 `

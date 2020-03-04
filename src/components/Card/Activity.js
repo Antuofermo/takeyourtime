@@ -1,15 +1,11 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Activity({ activities }) {
+export default function Activity({ activity }) {
   return (
-    <CardStyled>
-      <ListStyled>
-        {activities.map(activity => (
-          <ActivityStyled>{activity}</ActivityStyled>
-        ))}
-      </ListStyled>
-    </CardStyled>
+    <ListStyled>
+      <ActivityStyled>{activity.name}</ActivityStyled>
+    </ListStyled>
   )
 }
 
@@ -19,8 +15,6 @@ const ListStyled = styled.ul`
 
 const ActivityStyled = styled.li`
   list-style: none;
-`
-const CardStyled = styled.div`
-  display: flex;
-  justify-content: center;
+  padding-left: 50px;
+  font-size: 16px;
 `

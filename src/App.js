@@ -1,15 +1,31 @@
 import React, { useState } from 'react'
 import Form from './components/Form'
-import Card from './components/Card/Card'
+import Cards from './components/Card/Cards'
 import styled from 'styled-components/macro'
 
 function App() {
-  const [activities, setActivities] = useState([])
+  const [activities, setActivities] = useState([
+    { category: 'Professional time', name: 'Work' },
+    { category: 'Obligatory time', name: 'Sleep' },
+    { category: 'Obligatory time', name: 'Eat' },
+  ])
+  const categories = [
+    'Professional time',
+    'Obligatory time',
+    'Personal time',
+    'Self time',
+    'Non-productive time',
+  ]
+
   return (
     <>
       <HeaderStyled>Add your activities</HeaderStyled>
-      <Form activities={activities} setActivities={setActivities} />
-      <Card activities={activities} />
+      <Form
+        stateActivities={activities}
+        categories={categories}
+        setActivities={setActivities}
+      />
+      <Cards activities={activities} categories={categories} />
     </>
   )
 }
