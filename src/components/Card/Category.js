@@ -9,11 +9,11 @@ export default function Category({ category }) {
   )
 }
 
-const TitleStyled = styled.div`
-  padding: 0;
+const TitleStyled = styled.span`
+  position: absolute;
+  z-index: 1;
 `
 const CategoryStyled = styled.h1`
   padding-left: 30px;
-  color: Black;
-  font-size: 12px;
+  font-size: 18px;
 `

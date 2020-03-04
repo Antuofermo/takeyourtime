@@ -7,19 +7,25 @@ export default function Cards({ activities, categories }) {
   return categories.map(category => (
     <CardStyled key={category}>
       <Category category={category} />
-      {activities
-        .filter(activity => activity.category === category)
-        .map(activity => (
-          <Activity activity={activity} />
-        ))}
+      <ActivitySection>
+        {activities
+          .filter(activity => activity.category === category)
+          .map(activity => (
+            <Activity activity={activity} />
+          ))}
+      </ActivitySection>
     </CardStyled>
   ))
 }
 
-const CardStyled = styled.div`
-  border: 1px solid black;
+const ActivitySection = styled.div`
   overflow-y: scroll;
-  margin-top: 30px;
+`
+const CardStyled = styled.div`
+  display: grid;
+  grid-template-rows: 48px auto;
+  border: 1px solid black;
+  margin: 30px 0;
   height: 150px;
   border-radius: 8px;
 `

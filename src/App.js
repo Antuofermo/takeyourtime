@@ -7,6 +7,7 @@ function App() {
   const [activities, setActivities] = useState([
     { category: 'Professional time', name: 'Work' },
     { category: 'Obligatory time', name: 'Sleep' },
+    { category: 'Obligatory time', name: 'Eat' },
   ])
   const categories = [
     'Professional time',

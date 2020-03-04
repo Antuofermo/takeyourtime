@@ -16,6 +16,5 @@ const ListStyled = styled.ul`
 const ActivityStyled = styled.li`
   list-style: none;
   padding-left: 50px;
-  color: Black;
-  font-size: 18px;
+  font-size: 16px;
 `
