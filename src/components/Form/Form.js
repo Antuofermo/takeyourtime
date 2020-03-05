@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import SaveBtn from './common/SaveBtn'
-import CategorySelect from './common/CategorySelect'
-import ActivityInput from './common/ActivityInput'
+import SaveBtn from './Button/SaveBtn'
+import CategorySelect from './Select/CategorySelect'
+import ActivityInput from './Input/ActivityInput'
 
 export default function Form({ stateActivities, setActivities, categories }) {
   return (

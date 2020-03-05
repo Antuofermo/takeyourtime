@@ -1,7 +1,7 @@
 import React from 'react'
-import Activity from './Activity'
+import Activity from './Activity/Activity'
 import styled from 'styled-components/macro'
-import Category from './Category'
+import Category from './Category/Category'
 import { uid } from 'react-uid'
 
 export default function Cards({ activities, categories }) {
