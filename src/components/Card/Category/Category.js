@@ -14,6 +14,9 @@ const TitleStyled = styled.span`
   z-index: 1;
 `
 const CategoryStyled = styled.h1`
-  padding-left: 30px;
+  padding: 12px 30px;
   font-size: 18px;
+  margin: 0;
+  background: #1a1919;
+  color: white;
 `

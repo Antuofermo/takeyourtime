@@ -1,7 +1,7 @@
 import React from 'react'
-import Activity from './Activity'
+import Activity from './Activity/Activity'
 import styled from 'styled-components/macro'
-import Category from './Category'
+import Category from './Category/Category'
 import { uid } from 'react-uid'
 
 export default function Cards({ activities, categories }) {
@@ -22,8 +22,8 @@ export default function Cards({ activities, categories }) {
 const ActivitySection = styled.div`
   overflow-y: scroll;
   border-top: 1px solid black;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 1px 2px pink inset;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 3px 2px pink inset;
 `
 const CardStyled = styled.div`
   display: grid;
@@ -31,5 +31,5 @@ const CardStyled = styled.div`
   border: 1px solid black;
   margin: 30px 0;
   height: 180px;
-  border-radius: 8px;
+  border-radius: 4px;
 `

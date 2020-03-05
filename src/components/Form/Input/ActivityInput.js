@@ -15,6 +15,14 @@ export default function Input() {
 
 const InputStyled = styled.input`
   border: 1px solid black;
-  border-radius: 8px;
+  border-radius: 50px;
   padding: 15px 40px;
+  margin-bottom: 20px;
+  width: 250px;
+  height: 48px;
+
+  ::placeholder {
+    color: black;
+    font-size: 14px;
+  }
 `

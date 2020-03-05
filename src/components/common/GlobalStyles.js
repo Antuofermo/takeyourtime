@@ -10,5 +10,6 @@ export default createGlobalStyle`
     padding: 48px;
     height: 100vh;
     font-family: Lucida, sans-serif; 
+    
   }
 `

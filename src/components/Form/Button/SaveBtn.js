@@ -10,7 +10,7 @@ const SaveBtnStyled = styled.button`
   font-size: 16px;
   color: #e4c026;
   background: #1a1919;
-  border-radius: 8px;
+  border-radius: 50px;
   box-shadow: 2px 2px 4px grey;
   border: 1px solid #1a1919;
   cursor: pointer;
