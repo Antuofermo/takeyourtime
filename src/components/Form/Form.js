@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import SaveBtn from './common/SaveBtn'
-import CategorySelect from './common/CategorySelect'
-import ActivityInput from './common/ActivityInput'
-import TimeInput from './common/TimeInput'
+import SaveBtn from './Button/SaveBtn'
+import ActivityInput from './Inputs/ActivityInput'
+import TimeInput from './Inputs/TimeInput'
+import CategorySelect from './Select/CategorySelect'
 
 export default function Form({ stateActivities, setActivities, categories }) {
   return (
@@ -20,7 +20,11 @@ export default function Form({ stateActivities, setActivities, categories }) {
     const form = event.target
     setActivities([
       ...stateActivities,
-      { name: form.activities.value, category: form.categories.value },
+      {
+        name: form.activities.value,
+        category: form.categories.value,
+        hours: form.hours.value,
+      },
     ])
     form.reset()
     form.focus()

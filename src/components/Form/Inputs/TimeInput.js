@@ -4,12 +4,13 @@ import styled from 'styled-components'
 export default function TimeInput() {
   return (
     <InputStyled
-      name="time"
-      placeholder="00:00 hours"
-      id="time-input"
-      type="time"
-      min="0:01"
-      max="24:00"
+      name="hours"
+      placeholder="00.00 hours"
+      id="hours-input"
+      type="number"
+      step="0.01"
+      min="0.01"
+      max="24.00"
     />
   )
 }
