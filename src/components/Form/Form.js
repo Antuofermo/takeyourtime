@@ -23,7 +23,7 @@ export default function Form({ stateActivities, setActivities, categories }) {
       {
         name: form.activities.value,
         category: form.categories.value,
-        hours: form.hours.value,
+        hours: Number(form.hours.value),
       },
     ])
     form.reset()

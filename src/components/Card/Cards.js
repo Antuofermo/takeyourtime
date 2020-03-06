@@ -23,7 +23,10 @@ export default function Cards({ activities, categories }) {
 
   function sumHoursByCategory(activities, category) {
     const sum = activities.reduce(
-      (acc, cur) => (cur.category === category ? (acc = acc + cur.hours) : acc),
+      (sum, activityItem) =>
+        activityItem.category === category
+          ? (sum = sum + activityItem.hours)
+          : sum,
       0
     )
     return sum

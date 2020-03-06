@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import Total from './Total'
 
 export default function Category({ category, hoursSum }) {
   return (
     <CategoryStyled>
       <span>{category}</span>
-      <SpanStyled>sum: {hoursSum ? hoursSum : 0}</SpanStyled>
+      <SpanStyled>
+        {hoursSum ? hoursSum : '0'} {hoursSum < 1 ? 'min' : 'h'}
+      </SpanStyled>
     </CategoryStyled>
   )
 }

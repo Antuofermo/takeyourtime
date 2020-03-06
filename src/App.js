@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Form from './components/Form/Form'
 import Cards from './components/Card/Cards'
 import styled from 'styled-components/macro'
-// import TimeLeft from './components/TimeLeft'
+import TimeRemaining from './components/TimeRemaining'
 
 function App() {
   const [activities, setActivities] = useState([
@@ -26,7 +26,7 @@ function App() {
         categories={categories}
         setActivities={setActivities}
       />
-      {/* <TimeLeft /> */}
+      <TimeRemaining activities={activities} />
       <Cards activities={activities} categories={categories} />
     </>
   )
