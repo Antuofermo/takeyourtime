@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import SaveBtn from './Button/SaveBtn'
 import ActivityInput from './Inputs/ActivityInput'
@@ -6,12 +6,13 @@ import TimeInput from './Inputs/TimeInput'
 import CategorySelect from './Select/CategorySelect'
 
 export default function Form({ stateActivities, setActivities, categories }) {
+  const [disable, setDisable] = useState(true)
   return (
     <FormStyled onSubmit={handleSubmit}>
-      <ActivityInput />
+      <ActivityInput onChange={handleChange} />
       <CategorySelect categories={categories} />
       <TimeInput />
-      <SaveBtn />
+      <SaveBtn disable={disable} />
     </FormStyled>
   )
 
@@ -28,6 +29,11 @@ export default function Form({ stateActivities, setActivities, categories }) {
     ])
     form.reset()
     form.focus()
+  }
+
+  function handleChange(event) {
+    event.target.value === '' ? setDisable(true) : setDisable(false)
+    console.log(event.target.value)
   }
 }
 

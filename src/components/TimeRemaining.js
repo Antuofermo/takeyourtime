@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function TimeLeft({ activities }) {
-  console.log(activities)
   return (
     <PStyled>
-      You still have {remainingHours(activities)} hours to add to your day
+      You still have {remainingHours(activities)} hours to add to your day, use
+      it wisely!
     </PStyled>
   )
 

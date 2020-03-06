@@ -16,7 +16,7 @@ export default function CategorySelect({ categories }) {
 const SelectStyled = styled.select`
   border: 1px solid black;
   border-radius: 50px;
-  padding: 15px 40px;
+  padding: 13px 40px;
   margin-bottom: 20px;
   width: 250px;
   height: 48px;

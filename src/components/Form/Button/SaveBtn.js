@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function SaveBtn() {
-  return <SaveBtnStyled>Save</SaveBtnStyled>
+export default function SaveBtn({ disable }) {
+  return <SaveBtnStyled disabled={disable}>Save</SaveBtnStyled>
 }
 
 const SaveBtnStyled = styled.button`
@@ -16,6 +16,11 @@ const SaveBtnStyled = styled.button`
   cursor: pointer;
 
   :hover {
+    box-shadow: none;
+  }
+
+  &:disabled {
+    opacity: 0.4;
     box-shadow: none;
   }
 `

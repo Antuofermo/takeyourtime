@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Input() {
+export default function Input({ onChange }) {
   return (
     <InputStyled
+      onChange={onChange}
       autoFocus
       type="text"
       name="activities"
