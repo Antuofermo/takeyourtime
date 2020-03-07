@@ -1,9 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function CategorySelect({ categories, onChange }) {
+export default function CategorySelect({ categories, onChange, value }) {
   return (
-    <SelectStyled onChange={onChange} name="categories" id="category-select">
+    <SelectStyled
+      value={value}
+      name="category"
+      onChange={onChange}
+      id="category-select"
+    >
       {['Choose category', ...categories].map(category => (
         <OptionStyled value={category} key={category}>
           {category}

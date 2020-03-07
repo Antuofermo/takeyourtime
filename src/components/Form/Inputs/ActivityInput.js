@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Input({ onChange }) {
+export default function Input({ onChange, value }) {
   return (
     <InputStyled
+      value={value}
+      name="name"
       onChange={onChange}
       autoFocus
       type="text"
-      name="activities"
       maxLength="60"
       minLength="3"
       placeholder="ex. Learn React"

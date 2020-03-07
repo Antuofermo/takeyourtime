@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function TimeInput({ onChange }) {
+export default function TimeInput({ onChange, value }) {
   return (
     <InputStyled
-      onChange={onChange}
+      value={value}
       name="hours"
+      onChange={onChange}
       placeholder="0.0"
       id="hours-input"
       type="number"

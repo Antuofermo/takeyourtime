@@ -21,15 +21,15 @@ function App() {
   return (
     <>
       <HeaderStyled>Add your activities</HeaderStyled>
-      <Form
-        stateActivities={activities}
-        categories={categories}
-        setActivities={setActivities}
-      />
+      <Form categories={categories} onSubmit={addActivity} />
       <TimeRemaining activities={activities} />
       <Cards activities={activities} categories={categories} />
     </>
   )
+
+  function addActivity(activity) {
+    setActivities([activity, ...activities])
+  }
 }
 
 export default App

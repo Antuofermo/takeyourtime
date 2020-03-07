@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function SaveBtn({ disable }) {
-  return <SaveBtnStyled disabled={disable}>Save</SaveBtnStyled>
+export default function SaveBtn({ disabled }) {
+  return <SaveBtnStyled disabled={disabled}>Save</SaveBtnStyled>
 }
 
 const SaveBtnStyled = styled.button`
