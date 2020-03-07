@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function TimeLeft({ activities }) {
+export default function TimeRemaining({ activities }) {
   return (
     <PStyled>
-      You still have {remainingHours(activities)} hours to add to your day, use
-      it wisely!
+      You still have {remainingHours(activities)}{' '}
+      {remainingHours(activities) === 1 ? 'hour' : 'hours'} to add to your day,
+      use {remainingHours(activities) === 1 ? 'it' : 'them'} wisely!
+      {console.log(remainingHours(activities))}
     </PStyled>
   )
 
