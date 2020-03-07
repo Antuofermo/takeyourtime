@@ -9,6 +9,7 @@ export default function Input({ onChange }) {
       type="text"
       name="activities"
       maxLength="60"
+      minLength="3"
       placeholder="ex. Learn React"
     />
   )

@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function TimeInput() {
+export default function TimeInput({ onChange }) {
   return (
     <InputStyled
+      onChange={onChange}
       name="hours"
-      placeholder="00.00 hours"
+      placeholder="0.0"
       id="hours-input"
       type="number"
-      step="0.01"
-      min="0.01"
-      max="24.00"
+      step="0.10"
+      min="0.10"
+      max="24"
     />
   )
 }
