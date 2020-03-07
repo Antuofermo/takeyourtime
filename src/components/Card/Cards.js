@@ -9,7 +9,11 @@ export default function Cards({ activities, categories }) {
     <CardStyled key={uid(category)}>
       <Category
         category={category}
-        hoursSum={sumHoursByCategory(activities, category)}
+        hoursSum={
+          sumHoursByCategory(activities, category) % 1 !== 0
+            ? sumHoursByCategory(activities, category).toFixed(1)
+            : sumHoursByCategory(activities, category)
+        }
       />
       <ActivitySection>
         {activities
