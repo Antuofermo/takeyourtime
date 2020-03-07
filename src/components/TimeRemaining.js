@@ -2,13 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function TimeRemaining({ activities }) {
-  return (
+  return remainingHours(activities) !== 0 ? (
     <PStyled>
       You still have {remainingHours(activities)}{' '}
       {remainingHours(activities) === 1 ? 'hour' : 'hours'} to add to your day,
       use {remainingHours(activities) === 1 ? 'it' : 'them'} wisely!
-      {console.log(remainingHours(activities))}
     </PStyled>
+  ) : (
+    <PStyled>You don't have any hours remaining</PStyled>
   )
 
   function remainingHours(activities) {
