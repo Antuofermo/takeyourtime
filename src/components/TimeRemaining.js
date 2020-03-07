@@ -4,7 +4,10 @@ import styled from 'styled-components'
 export default function TimeRemaining({ activities }) {
   return remainingHours(activities) !== 0 ? (
     <PStyled>
-      You still have {remainingHours(activities).toFixed(1)}{' '}
+      You still have{' '}
+      {remainingHours(activities) % 1 !== 0
+        ? remainingHours(activities).toFixed(1)
+        : remainingHours(activities)}{' '}
       {remainingHours(activities) === 1 ? 'hour' : 'hours'} to add to your day,
       use {remainingHours(activities) === 1 ? 'it' : 'them'} wisely!
     </PStyled>
