@@ -9,9 +9,9 @@ export default function Form({ stateActivities, setActivities, categories }) {
   const [disable, setDisable] = useState(true)
   return (
     <FormStyled onSubmit={handleSubmit}>
-      <ActivityInput onChange={handleChange} />
-      <CategorySelect categories={categories} />
-      <TimeInput />
+      <ActivityInput onChange={handleChangeActivity} />
+      <CategorySelect categories={categories} onChange={handleChangeCategory} />
+      <TimeInput onChange={handleChangeTime} />
       <SaveBtn disable={disable} />
     </FormStyled>
   )
@@ -31,9 +31,16 @@ export default function Form({ stateActivities, setActivities, categories }) {
     form.focus()
   }
 
-  function handleChange(event) {
-    event.target.value === '' ? setDisable(true) : setDisable(false)
-    console.log(event.target.value)
+  function handleChangeActivity(event) {
+    setDisable(event.target.value === '')
+  }
+
+  function handleChangeCategory(event) {
+    setDisable(event.target.value === 'Choose category')
+  }
+
+  function handleChangeTime(event) {
+    setDisable(event.target.value === '0')
   }
 }
 

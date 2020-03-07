@@ -9,8 +9,8 @@ export default function TimeInput({ onChange }) {
       placeholder="0.0"
       id="hours-input"
       type="number"
-      step="0.10"
-      min="0.10"
+      step="0.50"
+      min="0.50"
       max="24"
     />
   )
