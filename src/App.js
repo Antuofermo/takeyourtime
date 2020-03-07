@@ -6,7 +6,7 @@ import TimeRemaining from './components/TimeRemaining'
 
 function App() {
   const [activities, setActivities] = useState([
-    { category: 'Professional time', name: 'Work', hours: 6 },
+    { category: 'Professional time', name: 'Work', hours: 8 },
     { category: 'Obligatory time', name: 'Sleep', hours: 8 },
     { category: 'Obligatory time', name: 'Eat', hours: 2 },
   ])
