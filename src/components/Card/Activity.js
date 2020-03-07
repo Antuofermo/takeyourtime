@@ -5,7 +5,9 @@ export default function Activity({ activity }) {
   return (
     <ListStyled>
       <NameStyled>{activity.name}</NameStyled>
-      <SpanStyled>({activity.hours} hours)</SpanStyled>
+      <SpanStyled>
+        ({activity.hours} {activity.hours === 1 ? 'hour' : 'hours'})
+      </SpanStyled>
     </ListStyled>
   )
 }
