@@ -20,7 +20,7 @@ const ListStyled = styled.ul`
 
 const NameStyled = styled.li`
   list-style: none;
-  padding-left: 50px;
+  padding-left: 30px;
   font-size: 16px;
 `
 
