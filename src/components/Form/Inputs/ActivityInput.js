@@ -1,13 +1,16 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Input() {
+export default function Input({ onChange, value }) {
   return (
     <InputStyled
+      value={value}
+      name="name"
+      onChange={onChange}
       autoFocus
       type="text"
-      name="activities"
       maxLength="60"
+      minLength="3"
       placeholder="ex. Learn React"
     />
   )
@@ -18,7 +21,7 @@ const InputStyled = styled.input`
   border-radius: 50px;
   padding: 15px 40px;
   margin-bottom: 20px;
-  width: 250px;
+  width: 300px;
   height: 48px;
 
   ::placeholder {
