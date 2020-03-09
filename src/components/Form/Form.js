@@ -64,6 +64,7 @@ const FormStyled = styled.form`
   flex-direction: column;
   align-items: center;
   height: 500px;
+  padding-top: 10px;
   width: 100vw;
 `
 
