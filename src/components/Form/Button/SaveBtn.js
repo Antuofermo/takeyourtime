@@ -7,12 +7,12 @@ export default function SaveBtn({ disabled }) {
 
 const SaveBtnStyled = styled.button`
   padding: 10px 50px;
-  font-size: 16px;
+  font-size: 18px;
   color: #e4c026;
-  background: #1a1919;
+  background: White;
   border-radius: 50px;
   box-shadow: 2px 2px 4px grey;
-  border: 1px solid #1a1919;
+  border: 1px solid white;
   cursor: pointer;
 
   :hover {
@@ -20,7 +20,7 @@ const SaveBtnStyled = styled.button`
   }
 
   &:disabled {
-    opacity: 0.7;
+    opacity: 0.6;
     box-shadow: none;
   }
 `

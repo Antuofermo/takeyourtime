@@ -4,6 +4,7 @@ import SaveBtn from './Button/SaveBtn'
 import ActivityInput from './Inputs/ActivityInput'
 import TimeInput from './Inputs/TimeInput'
 import CategorySelect from './Select/CategorySelect'
+import logo from '../img/logo.png'
 
 export default function Form({ categories, onSubmit }) {
   const [values, setValues] = useState({
@@ -11,9 +12,11 @@ export default function Form({ categories, onSubmit }) {
     category: 'Choose category',
     hours: '',
   })
+  const [timeLeft, setTimeLeft] = useState(6)
 
   return (
     <FormStyled onSubmit={handleSubmit}>
+      <Logo src={logo} />
       <ActivityInput name="name" onChange={handleChange} value={values.name} />
       <CategorySelect
         name="category"
@@ -47,10 +50,26 @@ export default function Form({ categories, onSubmit }) {
     const { name, category, hours } = values
     return name !== '' && category !== 'Choose category' && hours !== ''
   }
+
+  function remainingHours(activities) {
+    const sum = activities.reduce((sum, activityItem) => {
+      return sum + activityItem.hours
+    }, 0)
+    return 24 - sum
+  }
 }
 
 const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 500px;
+  width: 100vw;
+`
+
+const Logo = styled.img`
+  position: absolute;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
 `

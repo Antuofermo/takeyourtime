@@ -15,4 +15,4 @@ const categories = [
   'Non-productive time',
 ]
 
-export const SaveBtn = () => <Form categories={categories} />
+export const Form = () => <Form categories={categories} />

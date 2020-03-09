@@ -7,9 +7,12 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    padding: 48px;
     height: 100vh;
     font-family: Lucida, sans-serif; 
+    display: grid;
+    grid-template-rows: 48px auto;
+    height: 100vh;
+    margin: 0 auto;
     
   }
 `

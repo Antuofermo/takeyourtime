@@ -37,6 +37,6 @@ const SelectStyled = styled.select`
 const OptionStyled = styled.option`
   background: white;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 18px;
   color: black;
 `
