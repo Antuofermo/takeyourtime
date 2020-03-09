@@ -31,16 +31,23 @@ function App() {
   ]
 
   return (
-    <>
+    <AppGrid>
       <HeaderStyled>
         <AppName>Take Your Time</AppName>
         <Logo src={logo} />
       </HeaderStyled>
 
-      <TitleStyled>Add your activities</TitleStyled>
-      <OpenModal>
-        <AddStyled onClick={openModal}></AddStyled>
-      </OpenModal>
+      <ScrollContainer>
+        <TitleStyled>Add your activities</TitleStyled>
+        <OpenModal>
+          <AddStyled onClick={openModal}></AddStyled>
+        </OpenModal>
+
+        <TimeRemaining activities={activities} />
+        <Cards activities={activities} categories={categories} />
+      </ScrollContainer>
+
+      <Footer></Footer>
 
       <Modal
         isOpen={modalIsOpen}
@@ -50,12 +57,7 @@ function App() {
         <CloseModal onClick={closeModal}>x</CloseModal>
         <Form categories={categories} onSubmit={addActivity} />
       </Modal>
-
-      <TimeRemaining activities={activities} />
-      <Cards activities={activities} categories={categories} />
-
-      <Footer></Footer>
-    </>
+    </AppGrid>
   )
 
   function openModal() {
@@ -70,6 +72,12 @@ function App() {
     setActivities([activity, ...activities])
   }
 }
+
+const AppGrid = styled.section`
+  display: grid;
+  grid-template-rows: 48px auto 48px;
+  height: 100vh;
+`
 
 const HeaderStyled = styled.section`
   background: #1a1919;
@@ -91,6 +99,10 @@ const AppName = styled.h1`
 const Logo = styled.img`
   position: absolute;
   width: 42px;
+`
+
+const ScrollContainer = styled.main`
+  overflow-y: scroll;
 `
 
 const Footer = styled.section`
@@ -117,14 +129,14 @@ const OpenModal = styled.button`
 const CloseModal = styled.button`
   border: none;
   background: #1a1919;
-  color: white;
+  color: grey;
   font-size: 18px;
   position: absolute;
   left: 88%;
   top: 2%;
 
   :hover {
-    color: grey;
+    color: white;
   }
 `
 
