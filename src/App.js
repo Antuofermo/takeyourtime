@@ -119,6 +119,13 @@ const CloseModal = styled.button`
   background: #1a1919;
   color: white;
   font-size: 18px;
+  position: absolute;
+  left: 88%;
+  top: 2%;
+
+  :hover {
+    color: grey;
+  }
 `
 
 const customStyles = {
