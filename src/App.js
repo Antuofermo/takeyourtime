@@ -5,7 +5,7 @@ import styled from 'styled-components/macro'
 import TimeRemaining from './components/TimeRemaining'
 import Modal from 'react-modal'
 import logo from './components/img/logo.png'
-import { cardsRef } from './firebase'
+// import { cardsRef } from './firebase'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -41,7 +41,12 @@ function App() {
         </OpenModal>
 
         <TimeRemaining activities={activities} />
-        <Cards activities={activities} categories={categories} />
+        <Cards
+          activities={activities}
+          categories={categories}
+          setActivities={setActivities}
+          onClick={deleteActivity}
+        />
       </ScrollContainer>
 
       <Footer></Footer>
@@ -51,7 +56,7 @@ function App() {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <CloseModal onClick={closeModal}>x</CloseModal>
+        <CloseModal onClick={closeModal}>&times;</CloseModal>
         <Form categories={categories} onSubmit={addActivity} />
       </Modal>
     </AppGrid>
@@ -70,6 +75,10 @@ function App() {
   }
 }
 
+function deleteActivity(activity, activities, setActivities) {
+  const index = activities.indexOf(activity)
+  setActivities([...activities.slice(0, index), ...activities.slice(index + 1)])
+}
 const AppGrid = styled.section`
   display: grid;
   grid-template-rows: 48px auto 48px;
@@ -144,7 +153,7 @@ const customStyles = {
   },
 }
 
-const AddStyled = styled.button`
+const AddStyled = styled.div`
   border: 3px solid black;
   background-color: #fff;
   font-size: 16px;
