@@ -4,11 +4,18 @@ import styled from 'styled-components/macro'
 export default function Activity({ activity }) {
   return (
     <ListStyled>
-      <NameStyled>{activity.name}</NameStyled>
-      <SpanStyled>
-        ({activity.hours}{' '}
-        {activity.hours < 1 ? 'min' : activity.hours === 1 ? 'hour' : 'hours'})
-      </SpanStyled>
+      <NameStyled>
+        {activity.name}
+        <SpanStyled>
+          ({activity.hours < 1 ? activity.hours * 60 : activity.hours}
+          {activity.hours < 1
+            ? ' min'
+            : activity.hours === 1
+            ? ' hour'
+            : ' hours'}
+          )
+        </SpanStyled>
+      </NameStyled>
     </ListStyled>
   )
 }

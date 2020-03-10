@@ -4,6 +4,7 @@ import SaveBtn from './Button/SaveBtn'
 import ActivityInput from './Inputs/ActivityInput'
 import TimeInput from './Inputs/TimeInput'
 import CategorySelect from './Select/CategorySelect'
+import logo from '../img/logo.png'
 
 export default function Form({ categories, onSubmit }) {
   const [values, setValues] = useState({
@@ -14,6 +15,7 @@ export default function Form({ categories, onSubmit }) {
 
   return (
     <FormStyled onSubmit={handleSubmit}>
+      <Logo src={logo} />
       <ActivityInput name="name" onChange={handleChange} value={values.name} />
       <CategorySelect
         name="category"
@@ -53,4 +55,14 @@ const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 500px;
+  padding-top: 10px;
+  width: 100vw;
+`
+
+const Logo = styled.img`
+  position: absolute;
+  z-index: -1;
+  width: 200px;
+  height: 200px;
 `

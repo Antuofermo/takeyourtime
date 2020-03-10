@@ -47,7 +47,7 @@ const CardStyled = styled.div`
   display: grid;
   grid-template-rows: 48px auto;
   border: 1px solid black;
-  margin: 30px 0;
+  margin: 30px 48px;
   height: 180px;
   border-radius: 4px;
 `

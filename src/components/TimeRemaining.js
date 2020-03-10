@@ -14,6 +14,7 @@ export default function TimeRemaining({ activities }) {
   ) : (
     <TimeLeftStyled>You don't have any hours remaining</TimeLeftStyled>
   )
+
   function remainingHours(activities) {
     const sum = activities.reduce((sum, activityItem) => {
       return sum + activityItem.hours
