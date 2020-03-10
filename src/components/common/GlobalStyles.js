@@ -8,7 +8,8 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: Lucida, sans-serif; 
-    margin: 0 auto;  
+    margin: 0; 
+    width: 100vw; 
   }
 
 `

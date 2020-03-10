@@ -12,7 +12,6 @@ export default function Form({ categories, onSubmit }) {
     category: 'Choose category',
     hours: '',
   })
-  const [timeLeft, setTimeLeft] = useState(6)
 
   return (
     <FormStyled onSubmit={handleSubmit}>
@@ -49,13 +48,6 @@ export default function Form({ categories, onSubmit }) {
   function isValidInput() {
     const { name, category, hours } = values
     return name !== '' && category !== 'Choose category' && hours !== ''
-  }
-
-  function remainingHours(activities) {
-    const sum = activities.reduce((sum, activityItem) => {
-      return sum + activityItem.hours
-    }, 0)
-    return 24 - sum
   }
 }
 

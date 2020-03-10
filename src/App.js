@@ -82,8 +82,8 @@ const AppGrid = styled.section`
 const HeaderStyled = styled.section`
   background: #1a1919;
   color: white;
-  height: 48px;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   padding: 0 20px;
   display: flex;
   align-items: center;
@@ -91,7 +91,6 @@ const HeaderStyled = styled.section`
 `
 
 const AppName = styled.h1`
-  position: absolute;
   z-index: 1;
   font-size: 19px;
   padding: 12px;
@@ -107,12 +106,7 @@ const ScrollContainer = styled.main`
 
 const Footer = styled.section`
   background: #1a1919;
-  color: white;
-  height: 48px;
-  display: flex;
-  padding-left: 12px;
-  align-items: center;
-  font-size: 20px;
+  height: 100%;
 `
 const TitleStyled = styled.h1`
   margin: 32px 0 24px 0;
