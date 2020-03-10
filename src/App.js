@@ -5,6 +5,7 @@ import styled from 'styled-components/macro'
 import TimeRemaining from './components/TimeRemaining'
 import Modal from 'react-modal'
 import logo from './components/img/logo.png'
+import { cardsRef } from './firebase'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -14,10 +15,6 @@ function App() {
     { category: 'Obligatory time', name: 'Sleep', hours: 8 },
     { category: 'Obligatory time', name: 'Eat', hours: 2 },
     { category: 'Self time', name: 'Go to the gym', hours: 1 },
-    { category: 'Obligatory time', name: 'Prepare & commute', hours: 1 },
-    { category: 'Non-productive time', name: 'Watch Netflix', hours: 1 },
-    { category: 'Personal time', name: 'Read 1984', hours: 1 },
-    { category: 'Personal time', name: 'Meet friends', hours: 1 },
   ])
 
   const [modalIsOpen, setIsOpen] = useState(false)
