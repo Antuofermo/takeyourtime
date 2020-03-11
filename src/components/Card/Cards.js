@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 import Activity from './Activity'
 import Category from './Category'
 
-export default function Cards({ activities, categories }) {
+export default function Cards({ activities, categories, deleteActivity }) {
   return categories.map(category => (
     <CardStyled key={uid(category)}>
       <Category
@@ -19,7 +19,11 @@ export default function Cards({ activities, categories }) {
         {activities
           .filter(activity => activity.category === category)
           .map(activity => (
-            <Activity activity={activity} key={uid(activity)} />
+            <Activity
+              activity={activity}
+              key={uid(activity)}
+              deleteActivity={deleteActivity}
+            />
           ))}
       </ActivitySection>
     </CardStyled>

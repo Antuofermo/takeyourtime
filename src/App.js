@@ -5,7 +5,7 @@ import styled from 'styled-components/macro'
 import TimeRemaining from './components/TimeRemaining'
 import Modal from 'react-modal'
 import logo from './components/img/logo.png'
-// import { cardsRef } from './firebase'
+import { cardsRef } from './firebase'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -45,7 +45,7 @@ function App() {
           activities={activities}
           categories={categories}
           setActivities={setActivities}
-          onClick={deleteActivity}
+          deleteActivity={deleteActivity}
         />
       </ScrollContainer>
 
@@ -73,12 +73,17 @@ function App() {
   function addActivity(activity) {
     setActivities([activity, ...activities])
   }
+
+  function deleteActivity(activity) {
+    const index = activities.indexOf(activity)
+    const newActivities = [
+      ...activities.slice(0, index),
+      ...activities.slice(index + 1),
+    ]
+    setActivities(newActivities)
+  }
 }
 
-function deleteActivity(activity, activities, setActivities) {
-  const index = activities.indexOf(activity)
-  setActivities([...activities.slice(0, index), ...activities.slice(index + 1)])
-}
 const AppGrid = styled.section`
   display: grid;
   grid-template-rows: 48px auto 48px;

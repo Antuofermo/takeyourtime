@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Activity({ activity, onClick }) {
+export default function Activity({ activity, deleteActivity, activities }) {
   return (
     <ListStyled>
       <NameStyled>
@@ -15,7 +15,7 @@ export default function Activity({ activity, onClick }) {
             : ' hours'}
           )
         </SpanStyled>
-        <BtnDelete onClick={() => onClick(activity)}>&times;</BtnDelete>
+        <BtnDelete onClick={() => deleteActivity(activity)}>&times;</BtnDelete>
       </NameStyled>
     </ListStyled>
   )
