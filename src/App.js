@@ -41,12 +41,7 @@ function App() {
         </OpenModal>
 
         <TimeRemaining activities={activities} />
-        <Cards
-          activities={activities}
-          categories={categories}
-          setActivities={setActivities}
-          deleteActivity={deleteActivity}
-        />
+        <Cards activities={activities} categories={categories} />
       </ScrollContainer>
 
       <Footer></Footer>
@@ -56,7 +51,7 @@ function App() {
         onRequestClose={closeModal}
         style={customStyles}
       >
-        <CloseModal onClick={closeModal}>&times;</CloseModal>
+        <CloseModal onClick={closeModal}>x</CloseModal>
         <Form categories={categories} onSubmit={addActivity} />
       </Modal>
     </AppGrid>
@@ -72,15 +67,6 @@ function App() {
 
   function addActivity(activity) {
     setActivities([activity, ...activities])
-  }
-
-  function deleteActivity(activity) {
-    const index = activities.indexOf(activity)
-    const newActivities = [
-      ...activities.slice(0, index),
-      ...activities.slice(index + 1),
-    ]
-    setActivities(newActivities)
   }
 }
 
@@ -158,7 +144,7 @@ const customStyles = {
   },
 }
 
-const AddStyled = styled.div`
+const AddStyled = styled.button`
   border: 3px solid black;
   background-color: #fff;
   font-size: 16px;

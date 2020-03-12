@@ -26,5 +26,4 @@ export default function TimeRemaining({ activities }) {
 const TimeLeftStyled = styled.p`
   margin-top: 50px;
   text-align: center;
-  margin: 30px;
 `

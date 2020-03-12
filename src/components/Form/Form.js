@@ -6,7 +6,7 @@ import TimeInput from './Inputs/TimeInput'
 import CategorySelect from './Select/CategorySelect'
 import logo from '../img/logo.png'
 
-export default function Form({ categories, onSubmit, closeModal }) {
+export default function Form({ categories, onSubmit }) {
   const [values, setValues] = useState({
     name: '',
     category: 'Choose category',
@@ -40,7 +40,6 @@ export default function Form({ categories, onSubmit, closeModal }) {
     const form = event.target
     if (isValidInput()) {
       onSubmit({ ...values, hours: Number(values.hours) })
-      localStorage.setItem('values', values)
       setValues({ name: '', category: 'Choose category', hours: '' })
       form[0] && form[0].focus()
     }
