@@ -5,9 +5,8 @@ import ActivityInput from './Inputs/ActivityInput'
 import TimeInput from './Inputs/TimeInput'
 import CategorySelect from './Select/CategorySelect'
 import logo from '../img/logo.png'
-
-export default function Form({ categories, onSubmit, closeModal }) {
-  const [values, setValues] = useState({
+export default function Form({ categories, onSubmit }) {
+  const [inputValues, setInputValues] = useState({
     name: '',
     category: 'Choose category',
     hours: '',
@@ -16,21 +15,29 @@ export default function Form({ categories, onSubmit, closeModal }) {
   return (
     <FormStyled onSubmit={handleSubmit}>
       <Logo src={logo} />
-      <ActivityInput name="name" onChange={handleChange} value={values.name} />
+      <ActivityInput
+        name="name"
+        onChange={handleChange}
+        value={inputValues.name}
+      />
       <CategorySelect
         name="category"
         onChange={handleChange}
-        value={values.category}
+        value={inputValues.category}
         categories={categories}
       />
-      <TimeInput name="hours" onChange={handleChange} value={values.hours} />
+      <TimeInput
+        name="hours"
+        onChange={handleChange}
+        value={inputValues.hours}
+      />
       <SaveBtn disabled={!isValidInput()} />
     </FormStyled>
   )
 
   function handleChange(event) {
-    setValues({
-      ...values,
+    setInputValues({
+      ...inputValues,
       [event.target.name]: event.target.value,
     })
   }
@@ -39,15 +46,14 @@ export default function Form({ categories, onSubmit, closeModal }) {
     event.preventDefault()
     const form = event.target
     if (isValidInput()) {
-      onSubmit({ ...values, hours: Number(values.hours) })
-      localStorage.setItem('values', values)
-      setValues({ name: '', category: 'Choose category', hours: '' })
+      onSubmit({ ...inputValues, hours: Number(inputValues.hours) })
+      setInputValues({ name: '', category: 'Choose category', hours: '' })
       form[0] && form[0].focus()
     }
   }
 
   function isValidInput() {
-    const { name, category, hours } = values
+    const { name, category, hours } = inputValues
     return name !== '' && category !== 'Choose category' && hours !== ''
   }
 }

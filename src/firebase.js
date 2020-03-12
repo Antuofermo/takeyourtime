@@ -1,5 +1,4 @@
 import firebase from 'firebase/app'
-import 'firebase/firestore'
 
 var firebaseConfig = {
   apiKey: 'AIzaSyA8YdZQ97vh1KpnzGz8LUNHvV0SdHReUZY',
@@ -13,12 +12,3 @@ var firebaseConfig = {
 }
 
 firebase.initializeApp(firebaseConfig)
-
-const db = firebase.firestore()
-
-export const cardsRef = db.collection('cards')
-cardsRef.add({
-  category: 'Personal Time',
-  name: 'To do',
-  hours: 8,
-})
