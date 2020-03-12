@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Activity({ activity }) {
+export default function Activity({ activity, deleteActivity, activities }) {
   return (
     <ListStyled>
       <NameStyled>
@@ -15,6 +15,7 @@ export default function Activity({ activity }) {
             : ' hours'}
           )
         </SpanStyled>
+        <BtnDelete onClick={() => deleteActivity(activity)}>&times;</BtnDelete>
       </NameStyled>
     </ListStyled>
   )
@@ -33,4 +34,14 @@ const NameStyled = styled.li`
 
 const SpanStyled = styled.span`
   padding-left: 10px;
+`
+
+const BtnDelete = styled.span`
+  padding-left: 10px;
+  color: grey;
+  cursor: pointer;
+
+  :hover {
+    color: black;
+  }
 `
