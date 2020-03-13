@@ -89,7 +89,7 @@ function App() {
 }
 const AppGrid = styled.section`
   display: grid;
-  grid-template-rows: 48px auto 48px;
+  grid-template-rows: 48px auto 18px;
   height: 100vh;
 `
 
