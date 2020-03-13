@@ -20,6 +20,8 @@ const CategoryStyled = styled.h1`
   margin: 0;
   background: #1a1919;
   color: white;
+  box-shadow: 0 3px 2px goldenrod;
+  cursor: pointer;
 `
 
 const SpanStyled = styled.span`

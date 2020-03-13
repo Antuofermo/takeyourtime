@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import Form from './components/Form/Form'
-import Cards from './components/Card/Cards'
-import styled from 'styled-components/macro'
-import TimeRemaining from './components/TimeRemaining'
 import Modal from 'react-modal'
+import styled from 'styled-components/macro'
+import Cards from './components/Card/Cards'
+import Form from './components/Form/Form'
 import logo from './components/img/logo.png'
+import TimeRemaining from './components/TimeRemaining'
 import { loadFromLocal, saveToLocal } from './utils'
 
 Modal.setAppElement(document.getElementById('root'))
@@ -162,19 +162,20 @@ const customStyles = {
 }
 
 const AddStyled = styled.div`
-  border: 3px solid black;
+  border: 3px solid goldenrod;
   background-color: #fff;
   font-size: 16px;
   height: 4em;
   width: 4em;
   border-radius: 999px;
   position: relative;
+  cursor: pointer;
 
   :after,
   :before {
     content: '';
     display: block;
-    background-color: black;
+    background-color: goldenrod;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -192,11 +193,23 @@ const AddStyled = styled.div`
   }
 
   :hover  {
-    border: 2px solid goldenrod;
+    border: 3px solid black;
 
     :after,
     :before {
       background-color: goldenrod;
+      animation-name: cross;
+      animation-fill-mode: forwards;
+      animation-duration: 0.2s;
+    }
+
+    @keyframes cross {
+      from {
+        background-color: goldenrod;
+      }
+      to {
+        background-color: black;
+      }
     }
   }
 `
