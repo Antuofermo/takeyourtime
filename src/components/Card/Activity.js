@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Activity({ activity, deleteActivity, activities }) {
+export default function Activity({ activity, deleteActivity }) {
   return (
     <ListStyled>
       <NameStyled>

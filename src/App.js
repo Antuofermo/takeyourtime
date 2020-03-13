@@ -5,17 +5,18 @@ import styled from 'styled-components/macro'
 import TimeRemaining from './components/TimeRemaining'
 import Modal from 'react-modal'
 import logo from './components/img/logo.png'
-import { cardsRef } from './firebase'
+import { loadFromLocal, saveToLocal } from './utils'
 
 Modal.setAppElement(document.getElementById('root'))
 
 function App() {
-  const [activities, setActivities] = useState([
-    { category: 'Professional time', name: 'Work', hours: 8 },
-    { category: 'Obligatory time', name: 'Sleep', hours: 8 },
-    { category: 'Obligatory time', name: 'Eat', hours: 2 },
-    { category: 'Self time', name: 'Go to the gym', hours: 1 },
-  ])
+  const [activities, setActivities] = useState(
+    loadFromLocal('activities') || [
+      { category: 'Professional time', name: 'Work', hours: 8 },
+      { category: 'Obligatory time', name: 'Sleep', hours: 8 },
+      { category: 'Obligatory time', name: 'Eat', hours: 2 },
+    ]
+  )
 
   const [modalIsOpen, setIsOpen] = useState(false)
 
@@ -71,7 +72,9 @@ function App() {
   }
 
   function addActivity(activity) {
-    setActivities([activity, ...activities])
+    const newActivities = [activity, ...activities]
+    setActivities(newActivities)
+    saveToLocal('activities', newActivities)
   }
 
   function deleteActivity(activity) {
@@ -81,9 +84,9 @@ function App() {
       ...activities.slice(index + 1),
     ]
     setActivities(newActivities)
+    saveToLocal('activities', newActivities)
   }
 }
-
 const AppGrid = styled.section`
   display: grid;
   grid-template-rows: 48px auto 48px;
