@@ -48,12 +48,11 @@ export default function Card({ activities, deleteActivity, category }) {
 const ActivityStyled = styled.div`
   overflow-y: scroll;
   border-top: 1px solid black;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0 0 2px 2px;
   border: 1px solid black;
 `
 const CardStyled = styled.div`
   display: grid;
   grid-template-rows: 48px auto;
   margin: 19px 48px;
-  border-radius: 4px;
 `

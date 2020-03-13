@@ -21,6 +21,7 @@ const CategoryStyled = styled.h1`
   background: #1a1919;
   color: white;
   box-shadow: 0 3px 2px goldenrod;
+  border-radius: 4px 4px 0 0;
   cursor: pointer;
 `
 
