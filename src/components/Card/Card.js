@@ -54,7 +54,6 @@ const ActivityStyled = styled.div`
 const CardStyled = styled.div`
   display: grid;
   grid-template-rows: 48px auto;
-  margin: 30px 48px;
-  height: 180px;
+  margin: 19px 48px;
   border-radius: 4px;
 `
