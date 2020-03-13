@@ -15,10 +15,15 @@ export default function Activity({ activity, deleteActivity }) {
             : ' hours'}
           )
         </SpanStyled>
-        <BtnDelete onClick={() => deleteActivity(activity)}>&times;</BtnDelete>
+        <BtnDelete onClick={handleDelete}>&times;</BtnDelete>
       </NameStyled>
     </ListStyled>
   )
+
+  function handleDelete(event) {
+    event.stopPropagation()
+    deleteActivity(activity)
+  }
 }
 
 const ListStyled = styled.ul`

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components/macro'
-import Cards from './components/Card/Cards'
+import Cards from './components/Card/CardsList'
 import Form from './components/Form/Form'
 import logo from './components/img/logo.png'
 import TimeRemaining from './components/TimeRemaining'
