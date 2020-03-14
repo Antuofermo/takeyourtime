@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components/macro'
 import CategoryList from './components/Card/CategoryList'
+import categories from './components/common/categories'
+import InitialData from './components/common/InitialData'
 import Form from './components/Form/Form'
 import logo from './components/img/logo.png'
 import TimeRemaining from './components/TimeRemaining'
 import { loadFromLocal, saveToLocal } from './utils'
-import InitialData from './components/common/InitialData'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -16,14 +17,6 @@ function App() {
   )
 
   const [modalIsOpen, setIsOpen] = useState(false)
-
-  const categories = [
-    'Professional time',
-    'Obligatory time',
-    'Personal time',
-    'Self time',
-    'Non-productive time',
-  ]
 
   return (
     <AppGrid>
