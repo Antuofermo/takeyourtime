@@ -7,14 +7,12 @@ import InitialData from './components/common/InitialData'
 import ModalForm from './components/Form/ModalForm'
 import logo from './components/img/logo.png'
 import TimeRemaining from './components/TimeRemaining'
-import { loadFromLocal, saveToLocal } from './utils'
+import { saveToLocal, loadActivities } from './utils'
 
 Modal.setAppElement(document.getElementById('root'))
 
 function App() {
-  const [activities, setActivities] = useState(
-    loadFromLocal('activities') || InitialData
-  )
+  const [activities, setActivities] = useState(loadActivities() || InitialData)
 
   const [modalIsOpen, setIsOpen] = useState(false)
 

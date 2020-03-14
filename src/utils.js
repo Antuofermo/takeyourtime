@@ -7,3 +7,7 @@ export function loadFromLocal(name) {
   const data = JSON.parse(jsonString)
   return data
 }
+
+export function loadActivities() {
+  loadFromLocal('activities')
+}
