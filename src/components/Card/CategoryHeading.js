@@ -14,8 +14,9 @@ export default function Category({ category, hoursSum }) {
 
 const CategoryStyled = styled.h1`
   display: flex;
-  justify-content: space-around;
-  padding-top: 12px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
   font-size: 18px;
   margin: 0;
   background: #1a1919;
