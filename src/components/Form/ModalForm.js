@@ -1,9 +1,9 @@
 import React from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components/macro'
-import Form from './Form'
 import { saveToLocal } from '../../utils'
 import categories from '../common/categories'
+import Form from './Form'
 
 export default function ModalForm({
   modalIsOpen,

@@ -7,13 +7,12 @@ import InitialData from './components/common/InitialData'
 import ModalForm from './components/Form/ModalForm'
 import logo from './components/img/logo.png'
 import TimeRemaining from './components/TimeRemaining'
-import { saveToLocal, loadActivities } from './utils'
+import { loadActivities, saveToLocal } from './utils'
 
 Modal.setAppElement(document.getElementById('root'))
 
 function App() {
   const [activities, setActivities] = useState(loadActivities() || InitialData)
-
   const [modalIsOpen, setIsOpen] = useState(false)
 
   return (
@@ -65,6 +64,7 @@ function App() {
     saveToLocal('activities', newActivities)
   }
 }
+
 const AppGrid = styled.section`
   display: grid;
   grid-template-rows: 48px auto 18px;
@@ -87,6 +87,7 @@ const AppName = styled.h1`
   font-size: 19px;
   padding: 12px;
 `
+
 const Logo = styled.img`
   position: absolute;
   width: 42px;
@@ -100,11 +101,13 @@ const Footer = styled.section`
   background: #1a1919;
   height: 100%;
 `
+
 const TitleStyled = styled.h1`
   margin: 32px 0 24px 0;
   text-align: center;
   font-size: 21px;
 `
+
 const OpenModal = styled.button`
   background: white;
   border: none;
