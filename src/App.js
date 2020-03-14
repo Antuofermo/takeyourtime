@@ -1,25 +1,18 @@
 import React, { useState } from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components/macro'
-import Cards from './components/Card/CardsList'
+import CategoryList from './components/Card/CategoryList'
 import Form from './components/Form/Form'
 import logo from './components/img/logo.png'
 import TimeRemaining from './components/TimeRemaining'
 import { loadFromLocal, saveToLocal } from './utils'
+import InitialData from './components/common/InitialData'
 
 Modal.setAppElement(document.getElementById('root'))
 
 function App() {
   const [activities, setActivities] = useState(
-    loadFromLocal('activities') || [
-      { category: 'Professional time', name: 'Work', hours: 8 },
-      { category: 'Obligatory time', name: 'Sleep', hours: 7 },
-      { category: 'Obligatory time', name: 'Cook & eat', hours: 2 },
-      { category: 'Personal time', name: 'Read Eloquend Javascript', hours: 1 },
-      { category: 'Personal time', name: 'Meet Friends', hours: 1 },
-      { category: 'Self time', name: 'Go to the Gym', hours: 1 },
-      { category: 'Non-productive time', name: 'Netflix', hours: 1 },
-    ]
+    loadFromLocal('activities') || InitialData
   )
 
   const [modalIsOpen, setIsOpen] = useState(false)
@@ -46,7 +39,7 @@ function App() {
         </OpenModal>
 
         <TimeRemaining activities={activities} />
-        <Cards
+        <CategoryList
           activities={activities}
           categories={categories}
           setActivities={setActivities}

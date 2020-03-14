@@ -1,0 +1,17 @@
+[
+  { "category": "Professional time", "name": "Work", "hours": 8 },
+  { "category": "Obligatory time", "name": "Sleep", "hours": 7 },
+  { "category": "Obligatory time", "name": "Cook & eat", "hours": 2 },
+  {
+    "category": "Personal time",
+    "name": "Read 1984",
+    "hours": 1
+  },
+  {
+    "category": "Personal time",
+    "name": "Go to the gym",
+    "hours": 1
+  },
+  { "category": "Self time", "name": "Meditation", "hours": 1 },
+  { "category": "Non-productive time", "name": "Netflix", "hours": 1 }
+]
