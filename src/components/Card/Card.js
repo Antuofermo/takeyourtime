@@ -1,7 +1,7 @@
 import React from 'react'
-import uid from 'uid'
-import styled from 'styled-components/macro'
 import { useToggle } from 'react-hooks-lib'
+import styled from 'styled-components/macro'
+import uid from 'uid'
 import Activity from './Activity'
 import CategoryHeading from './CategoryHeading'
 
