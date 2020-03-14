@@ -1,32 +1,22 @@
 import React, { useState } from 'react'
-import Form from './components/Form/Form'
-import Cards from './components/Card/Cards'
-import styled from 'styled-components/macro'
-import TimeRemaining from './components/TimeRemaining'
 import Modal from 'react-modal'
+import styled from 'styled-components/macro'
+import CategoryList from './components/Card/CategoryList'
+import categories from './components/common/categories'
+import InitialData from './components/common/InitialData'
+import Form from './components/Form/Form'
 import logo from './components/img/logo.png'
+import TimeRemaining from './components/TimeRemaining'
 import { loadFromLocal, saveToLocal } from './utils'
 
 Modal.setAppElement(document.getElementById('root'))
 
 function App() {
   const [activities, setActivities] = useState(
-    loadFromLocal('activities') || [
-      { category: 'Professional time', name: 'Work', hours: 8 },
-      { category: 'Obligatory time', name: 'Sleep', hours: 8 },
-      { category: 'Obligatory time', name: 'Eat', hours: 2 },
-    ]
+    loadFromLocal('activities') || InitialData
   )
 
   const [modalIsOpen, setIsOpen] = useState(false)
-
-  const categories = [
-    'Professional time',
-    'Obligatory time',
-    'Personal time',
-    'Self time',
-    'Non-productive time',
-  ]
 
   return (
     <AppGrid>
@@ -42,7 +32,7 @@ function App() {
         </OpenModal>
 
         <TimeRemaining activities={activities} />
-        <Cards
+        <CategoryList
           activities={activities}
           categories={categories}
           setActivities={setActivities}
@@ -89,7 +79,7 @@ function App() {
 }
 const AppGrid = styled.section`
   display: grid;
-  grid-template-rows: 48px auto 48px;
+  grid-template-rows: 48px auto 18px;
   height: 100vh;
 `
 
@@ -162,19 +152,20 @@ const customStyles = {
 }
 
 const AddStyled = styled.div`
-  border: 3px solid black;
+  border: 3px solid goldenrod;
   background-color: #fff;
   font-size: 16px;
   height: 4em;
   width: 4em;
   border-radius: 999px;
   position: relative;
+  cursor: pointer;
 
   :after,
   :before {
     content: '';
     display: block;
-    background-color: black;
+    background-color: goldenrod;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -192,11 +183,23 @@ const AddStyled = styled.div`
   }
 
   :hover  {
-    border: 2px solid goldenrod;
+    border: 3px solid black;
 
     :after,
     :before {
       background-color: goldenrod;
+      animation-name: cross;
+      animation-fill-mode: forwards;
+      animation-duration: 0.2s;
+    }
+
+    @keyframes cross {
+      from {
+        background-color: goldenrod;
+      }
+      to {
+        background-color: black;
+      }
     }
   }
 `

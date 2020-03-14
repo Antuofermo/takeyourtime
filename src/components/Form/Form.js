@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
+import logo from '../img/logo.png'
 import SaveBtn from './Button/SaveBtn'
 import ActivityInput from './Inputs/ActivityInput'
 import TimeInput from './Inputs/TimeInput'
 import CategorySelect from './Select/CategorySelect'
-import logo from '../img/logo.png'
 export default function Form({ categories, onSubmit }) {
   const [inputValues, setInputValues] = useState({
     name: '',
