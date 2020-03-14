@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Category({ category, hoursSum }) {
+export default function CategoryHeading({ category, hoursSum }) {
   return (
     <CategoryStyled>
       <span>{category}</span>
