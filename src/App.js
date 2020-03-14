@@ -13,8 +13,12 @@ function App() {
   const [activities, setActivities] = useState(
     loadFromLocal('activities') || [
       { category: 'Professional time', name: 'Work', hours: 8 },
-      { category: 'Obligatory time', name: 'Sleep', hours: 8 },
-      { category: 'Obligatory time', name: 'Eat', hours: 2 },
+      { category: 'Obligatory time', name: 'Sleep', hours: 7 },
+      { category: 'Obligatory time', name: 'Cook & eat', hours: 2 },
+      { category: 'Personal time', name: 'Read Eloquend Javascript', hours: 1 },
+      { category: 'Personal time', name: 'Meet Friends', hours: 1 },
+      { category: 'Self time', name: 'Go to the Gym', hours: 1 },
+      { category: 'Non-productive time', name: 'Netflix', hours: 1 },
     ]
   )
 
