@@ -3,20 +3,19 @@ import uid from 'uid'
 import styled from 'styled-components/macro'
 import { useToggle } from 'react-hooks-lib'
 import Activity from './Activity'
-import Category from './CategoryHeading'
+import CategoryHeading from './CategoryHeading'
 
 export default function Card({ activities, deleteActivity, category }) {
   const { on, toggle } = useToggle(false)
+
+  const hoursSum =
+    sumHoursByCategory(activities, category) % 1 !== 0
+      ? sumHoursByCategory(activities, category).toFixed(1)
+      : sumHoursByCategory(activities, category)
+
   return (
-    <CardStyled key={uid(32)} onClick={toggle}>
-      <Category
-        category={category}
-        hoursSum={
-          sumHoursByCategory(activities, category) % 1 !== 0
-            ? sumHoursByCategory(activities, category).toFixed(1)
-            : sumHoursByCategory(activities, category)
-        }
-      />
+    <CardStyled onClick={toggle}>
+      <CategoryHeading category={category} hoursSum={hoursSum} />
       {on && (
         <ActivityStyled>
           {activities
@@ -36,9 +35,7 @@ export default function Card({ activities, deleteActivity, category }) {
   function sumHoursByCategory(activities, category) {
     const sum = activities.reduce(
       (sum, activityItem) =>
-        activityItem.category === category
-          ? (sum = sum + activityItem.hours)
-          : sum,
+        activityItem.category === category ? sum + activityItem.hours : sum,
       0
     )
     return sum
