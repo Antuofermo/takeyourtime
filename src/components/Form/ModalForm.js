@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components/macro'
-import { saveToLocal } from '../../utils'
+import { saveActivities } from '../../utils'
 import categories from '../common/categories'
 import Form from './Form'
 
@@ -29,7 +29,7 @@ export default function ModalForm({
   function addActivity(activity) {
     const newActivities = [activity, ...activities]
     setActivities(newActivities)
-    saveToLocal('activities', newActivities)
+    saveActivities(newActivities)
   }
 }
 

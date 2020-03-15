@@ -9,5 +9,12 @@ export function loadFromLocal(name) {
 }
 
 export function loadActivities() {
-  loadFromLocal('activities')
+  return loadFromLocal('activities')
 }
+
+export function saveActivities(newActivities) {
+  return saveToLocal('activities', newActivities)
+}
+
+const initialState = { name: '', category: 'Choose category', hours: '' }
+export default initialState
