@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function AddActivity(setIsOpen) {
+export default function AddActivity({ setIsOpen }) {
   return (
     <>
       <TitleStyled>Add your activities</TitleStyled>
