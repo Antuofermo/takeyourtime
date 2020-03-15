@@ -5,9 +5,9 @@ import CategoryList from './components/Card/CategoryList'
 import categories from './components/common/categories'
 import InitialData from './components/common/InitialData'
 import ModalForm from './components/Form/ModalForm'
-import logo from './components/img/logo.png'
 import TimeRemaining from './components/TimeRemaining'
 import { loadActivities, save } from './utils'
+import Header from './components/Header'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -17,10 +17,7 @@ function App() {
 
   return (
     <AppGrid>
-      <HeaderStyled>
-        <AppName>Take Your Time</AppName>
-        <Logo src={logo} />
-      </HeaderStyled>
+      <Header />
 
       <ScrollContainer>
         <TitleStyled>Add your activities</TitleStyled>
@@ -29,6 +26,7 @@ function App() {
         </OpenModal>
 
         <TimeRemaining activities={activities} />
+
         <CategoryList
           activities={activities}
           categories={categories}
@@ -69,28 +67,6 @@ const AppGrid = styled.section`
   display: grid;
   grid-template-rows: 48px auto 18px;
   height: 100vh;
-`
-
-const HeaderStyled = styled.section`
-  background: #1a1919;
-  color: white;
-  height: 100%;
-  width: 100%;
-  padding: 0 20px;
-  display: flex;
-  align-items: center;
-  font-size: 20px;
-`
-
-const AppName = styled.h1`
-  z-index: 1;
-  font-size: 19px;
-  padding: 12px;
-`
-
-const Logo = styled.img`
-  position: absolute;
-  width: 42px;
 `
 
 const ScrollContainer = styled.main`
