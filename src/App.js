@@ -7,7 +7,7 @@ import InitialData from './components/common/InitialData'
 import ModalForm from './components/Form/ModalForm'
 import logo from './components/img/logo.png'
 import TimeRemaining from './components/TimeRemaining'
-import { loadActivities, saveToLocal } from './utils'
+import { loadActivities, save } from './utils'
 
 Modal.setAppElement(document.getElementById('root'))
 
@@ -61,7 +61,7 @@ function App() {
       ...activities.slice(index + 1),
     ]
     setActivities(newActivities)
-    saveToLocal('activities', newActivities)
+    save(newActivities)
   }
 }
 

@@ -12,7 +12,7 @@ export function loadActivities() {
   return loadFromLocal('activities')
 }
 
-export function saveActivities(newActivities) {
+export function save(newActivities) {
   return saveToLocal('activities', newActivities)
 }
 
