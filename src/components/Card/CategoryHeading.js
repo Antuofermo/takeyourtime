@@ -18,6 +18,7 @@ const CategoryStyled = styled.h1`
   align-items: center;
   padding: 12px;
   font-size: 18px;
+  height: 48px;
   margin: 0;
   background: #1a1919;
   color: white;
