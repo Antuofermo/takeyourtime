@@ -25,7 +25,7 @@ const SelectStyled = styled.select`
   margin-bottom: 20px;
   width: 250px;
   height: 48px;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 14px;
   color: black;
   appearance: none;

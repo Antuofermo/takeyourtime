@@ -23,6 +23,7 @@ const InputStyled = styled.input`
   margin-bottom: 20px;
   width: 300px;
   height: 48px;
+  font-size: 15px;
 
   ::placeholder {
     color: black;

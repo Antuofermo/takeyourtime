@@ -24,6 +24,7 @@ const InputStyled = styled.input`
   margin-bottom: 20px;
   width: 200px;
   height: 48px;
+  font-size: 15px;
 
   ::placeholder {
     text-align: center;

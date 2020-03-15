@@ -4,18 +4,15 @@ import styled from 'styled-components/macro'
 import CategoryList from './components/Card/CategoryList'
 import categories from './components/common/categories'
 import InitialData from './components/common/InitialData'
-import Form from './components/Form/Form'
+import ModalForm from './components/Form/ModalForm'
 import logo from './components/img/logo.png'
 import TimeRemaining from './components/TimeRemaining'
-import { loadFromLocal, saveToLocal } from './utils'
+import { loadActivities, saveToLocal } from './utils'
 
 Modal.setAppElement(document.getElementById('root'))
 
 function App() {
-  const [activities, setActivities] = useState(
-    loadFromLocal('activities') || InitialData
-  )
-
+  const [activities, setActivities] = useState(loadActivities() || InitialData)
   const [modalIsOpen, setIsOpen] = useState(false)
 
   return (
@@ -37,34 +34,24 @@ function App() {
           categories={categories}
           setActivities={setActivities}
           deleteActivity={deleteActivity}
+          setIsopen={setIsOpen}
         />
       </ScrollContainer>
 
       <Footer></Footer>
 
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-      >
-        <CloseModal onClick={closeModal}>&times;</CloseModal>
-        <Form categories={categories} onSubmit={addActivity} />
-      </Modal>
+      <ModalForm
+        modalIsOpen={modalIsOpen}
+        categories={categories}
+        activities={activities}
+        setActivities={setActivities}
+        setIsOpen={setIsOpen}
+      />
     </AppGrid>
   )
 
   function openModal() {
     setIsOpen(true)
-  }
-
-  function closeModal() {
-    setIsOpen(false)
-  }
-
-  function addActivity(activity) {
-    const newActivities = [activity, ...activities]
-    setActivities(newActivities)
-    saveToLocal('activities', newActivities)
   }
 
   function deleteActivity(activity) {
@@ -77,6 +64,7 @@ function App() {
     saveToLocal('activities', newActivities)
   }
 }
+
 const AppGrid = styled.section`
   display: grid;
   grid-template-rows: 48px auto 18px;
@@ -99,6 +87,7 @@ const AppName = styled.h1`
   font-size: 19px;
   padding: 12px;
 `
+
 const Logo = styled.img`
   position: absolute;
   width: 42px;
@@ -112,44 +101,19 @@ const Footer = styled.section`
   background: #1a1919;
   height: 100%;
 `
+
 const TitleStyled = styled.h1`
   margin: 32px 0 24px 0;
   text-align: center;
   font-size: 21px;
 `
+
 const OpenModal = styled.button`
   background: white;
   border: none;
   display: block;
   margin: auto;
 `
-
-const CloseModal = styled.button`
-  border: none;
-  background: #1a1919;
-  color: grey;
-  font-size: 18px;
-  position: absolute;
-  left: 88%;
-  top: 2%;
-
-  :hover {
-    color: white;
-  }
-`
-
-const customStyles = {
-  content: {
-    top: '95%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    border: 'none',
-    background: '#1a1919',
-  },
-}
 
 const AddStyled = styled.div`
   border: 3px solid goldenrod;
