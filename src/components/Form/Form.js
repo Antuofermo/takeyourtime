@@ -5,13 +5,10 @@ import SaveBtn from './Button/SaveBtn'
 import ActivityInput from './Inputs/ActivityInput'
 import TimeInput from './Inputs/TimeInput'
 import CategorySelect from './Select/CategorySelect'
+import initialState from '../../utils'
 
 export default function Form({ categories, onSubmit }) {
-  const [inputValues, setInputValues] = useState({
-    name: '',
-    category: 'Choose category',
-    hours: '',
-  })
+  const [inputValues, setInputValues] = useState(initialState)
 
   return (
     <FormStyled onSubmit={handleSubmit}>
@@ -48,7 +45,7 @@ export default function Form({ categories, onSubmit }) {
     const form = event.target
     if (isValidInput()) {
       onSubmit({ ...inputValues, hours: Number(inputValues.hours) })
-      setInputValues({ name: '', category: 'Choose category', hours: '' })
+      setInputValues(initialState)
       form[0] && form[0].focus()
     }
   }

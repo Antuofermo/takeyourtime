@@ -26,7 +26,7 @@ const SelectStyled = styled.select`
   width: 250px;
   height: 48px;
   font-size: 15px;
-  line-height: 14px;
+  line-height: 15px;
   color: black;
   appearance: none;
   background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png)
