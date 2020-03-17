@@ -26,6 +26,7 @@ const AppName = styled.h1`
   z-index: 1;
   font-size: 19px;
   padding: 12px;
+  user-select: none;
 `
 
 const Logo = styled.img`
