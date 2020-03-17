@@ -54,10 +54,11 @@ const NoTimeLeftStyled = styled.p`
 
 const RemovehoursStyled = styled.div`
   padding: 15px;
+  border: 1px solid #b20238;
   border-radius: 4px;
   position: relative;
   z-index: 1;
-  background: black;
+  background: white;
   margin-top: 50px;
   text-align: center;
   margin: 30px;
