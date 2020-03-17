@@ -1,8 +1,8 @@
 const categories = [
-  'Professional time',
-  'Obligatory time',
   'Personal time',
   'Self time',
+  'Obligatory time',
+  'Professional time',
   'Non-productive time',
 ]
 
