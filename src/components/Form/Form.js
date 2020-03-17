@@ -5,7 +5,7 @@ import SaveBtn from './Button/SaveBtn'
 import ActivityInput from './Inputs/ActivityInput'
 import TimeInput from './Inputs/TimeInput'
 import CategorySelect from './Select/CategorySelect'
-import initialState from '../common/utils'
+import initialState from '../../utils'
 
 export default function Form({ categories, onSubmit }) {
   const [inputValues, setInputValues] = useState(initialState)

@@ -2,16 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function TimeRemaining({ activities }) {
-  return remainingHours(activities) >= 1 ? (
-    <TimeLeftStyled>
-      You still have{' '}
-      {remainingHours(activities) % 1 !== 0
-        ? remainingHours(activities).toFixed(1)
-        : remainingHours(activities)}{' '}
-      {remainingHours(activities) === 1 ? 'hour' : 'hours'} to add to your day,
-      use {remainingHours(activities) === 1 ? 'it' : 'them'} wisely!
-    </TimeLeftStyled>
-  ) : remainingHours(activities) === 0 ? (
+  const timeRemaining = function remainingHours(activities) {
+    const sum = activities.reduce((sum, activityItem) => {
+      return sum + activityItem.hours
+    }, 0)
+    return 24 - sum
+  }
+  return timeRemaining >= 1 ? (
+    timeLeft()
+  ) : timeRemaining === 0 ? (
     <NoTimeLeftStyled>
       Day full! You don't have any hours remaining.
     </NoTimeLeftStyled>
@@ -22,18 +21,19 @@ export default function TimeRemaining({ activities }) {
     </RemovehoursStyled>
   )
 
-  function remainingHours(activities) {
-    const sum = activities.reduce((sum, activityItem) => {
-      return sum + activityItem.hours
-    }, 0)
-    return 24 - sum
+  function timeLeft() {
+    return (
+      <TimeLeftStyled>
+        You still have{' '}
+        {timeRemaining % 1 !== 0 ? timeRemaining.toFixed(1) : timeRemaining}{' '}
+        {timeRemaining === 1 ? 'hour' : 'hours'} to add to your day, use{' '}
+        {timeRemaining === 1 ? 'it' : 'them'} wisely!
+      </TimeLeftStyled>
+    )
   }
 
-  function hourOverflow(activities) {
-    const sum = activities.reduce((sum, activityItem) => {
-      return sum + activityItem.hours
-    }, 0)
-    return sum - 24 + 1
+  function hourOverflow() {
+    return timeRemaining * -1 + 1
   }
 }
 
