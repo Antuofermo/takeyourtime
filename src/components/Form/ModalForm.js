@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from 'react-modal'
 import styled from 'styled-components/macro'
-import { save } from '../../utils'
+import { save } from '../common/utils'
 import categories from '../common/categories'
 import Form from './Form'
 

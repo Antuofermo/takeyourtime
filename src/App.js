@@ -6,7 +6,7 @@ import categories from './components/common/categories'
 import InitialData from './components/common/InitialData'
 import ModalForm from './components/Form/ModalForm'
 import TimeRemaining from './components/TimeRemaining'
-import { loadActivities, save } from './utils'
+import { loadActivities, save } from './components/common/utils'
 import Header from './components/Header'
 import OpenModal from './components/OpenModal'
 
