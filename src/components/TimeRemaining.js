@@ -2,12 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function TimeRemaining({ activities }) {
-  const timeRemaining = function remainingHours(activities) {
-    const sum = activities.reduce((sum, activityItem) => {
-      return sum + activityItem.hours
-    }, 0)
-    return 24 - sum
-  }
+  const timeRemaining = remainingHours(activities)
+
   return timeRemaining >= 1 ? (
     timeLeft()
   ) : timeRemaining === 0 ? (
@@ -30,6 +26,13 @@ export default function TimeRemaining({ activities }) {
         {timeRemaining === 1 ? 'it' : 'them'} wisely!
       </TimeLeftStyled>
     )
+  }
+
+  function remainingHours(activities) {
+    const sum = activities.reduce((sum, activityItem) => {
+      return sum + activityItem.hours
+    }, 0)
+    return 24 - sum
   }
 
   function hourOverflow() {
