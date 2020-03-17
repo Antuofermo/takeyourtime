@@ -3,6 +3,13 @@ import logo from './img/logo.png'
 import styled from 'styled-components/macro'
 import guidance from './img/guidance.png'
 import Modal from 'react-modal'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemHeading,
+  AccordionItemButton,
+  AccordionItemPanel,
+} from 'react-accessible-accordion'
 
 export default function Header({ closeModal }) {
   const [modalIsOpen, setIsOpen] = useState(false)
@@ -24,18 +31,83 @@ export default function Header({ closeModal }) {
       >
         <AppName>Take Your Time</AppName>
         <Logo src={logo} />
-        <Description>
-          Take Your Time helps to categorize daily activities and to check how
-          much time you spend on them. With this app you can finally do what you
-          always thought you never had time for.
-        </Description>
-        <ul>
-          <Category>Professional time</Category>
-          <Category>You can't say no</Category>
-          <Category>your hobbies</Category>
-          <Category>Stay healthy</Category>
-          <Category>The less the better</Category>
-        </ul>
+        <AppDescription>
+          Take Your Time helps you to categorize daily activities and to check
+          how much time you spend on them. You can finally do what you always
+          thought you'd never have time for! <br />
+          <br />
+          Check below the different categories:
+        </AppDescription>
+
+        <Accordion>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                <Category>Professional time</Category>
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <CategoryDescription>
+                This is where you add all activities that make you gain money
+              </CategoryDescription>
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                <Category>Obligatory time</Category>
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <CategoryDescription>
+                This is where you add activities that you have to do...
+              </CategoryDescription>
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                <Category>Personal time</Category>
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <CategoryDescription>
+                In ad velit in ex nostrud dolore cupidatat consectetur ea in ut
+                nostrud velit in irure cillum tempor laboris sed adipisicing eu
+                esse duis nulla non.
+              </CategoryDescription>
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                <Category>Self time</Category>
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <CategoryDescription>
+                In ad velit in ex nostrud dolore cupidatat consectetur ea in ut
+                nostrud velit in irure cillum tempor laboris sed adipisicing eu
+                esse duis nulla non.
+              </CategoryDescription>
+            </AccordionItemPanel>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionItemHeading>
+              <AccordionItemButton>
+                <Category>Non-productive time</Category>
+              </AccordionItemButton>
+            </AccordionItemHeading>
+            <AccordionItemPanel>
+              <CategoryDescription>
+                In ad velit in ex nostrud dolore cupidatat consectetur ea in ut
+                nostrud velit in irure cillum tempor laboris sed adipisicing eu
+                esse duis nulla non.
+              </CategoryDescription>
+            </AccordionItemPanel>
+          </AccordionItem>
+        </Accordion>
+
         <CloseModal onClick={closeModal}>Got it!</CloseModal>
       </Modal>
     </HeaderStyled>
@@ -50,7 +122,11 @@ export default function Header({ closeModal }) {
   }
 }
 
-const Category = styled.li`
+const CategoryDescription = styled.p`
+  margin: 15px;
+`
+
+const Category = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,16 +134,17 @@ const Category = styled.li`
   margin: 3px;
   font-size: 18px;
   height: 48px;
-  margin: 0;
+  margin-bottom: 10px;
   background: #1a1919;
   color: white;
   border: 1px solid white;
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px;
   cursor: pointer;
 `
 
 const customStyles = {
   content: {
+    zIndex: '2',
     top: '50%',
     left: '50%',
     right: 'auto',
@@ -84,10 +161,11 @@ const customStyles = {
   },
 }
 
-const Description = styled.p`
-  padding: 0 15px;
+const AppDescription = styled.p`
+  padding: 0 20px;
 `
 const CloseModal = styled.button`
+  margin-top: 10px;
   padding: 8px;
   font-size: 16px;
   color: black;
@@ -124,6 +202,7 @@ const Logo = styled.img`
 const Help = styled.img`
   color: goldenrod;
   position: Absolute;
-  height: 30px;
+  height: 20px;
   right: 5%;
+  cursor: pointer;
 `
