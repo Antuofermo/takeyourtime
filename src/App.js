@@ -5,7 +5,7 @@ import CategoryList from './components/Card/CategoryList'
 import categories from './components/common/categories'
 import InitialData from './components/common/InitialData'
 import ModalForm from './components/Form/ModalForm'
-import TimeRemaining from './components/TimeRemaining'
+import TimeIndication from './components/TimeIndication'
 import { loadActivities, save } from './utils'
 import Header from './components/Header'
 import OpenModal from './components/OpenModal'
@@ -22,7 +22,7 @@ function App() {
 
       <ScrollContainer>
         <OpenModal setIsOpen={setIsOpen} />
-        <TimeRemaining activities={activities} />
+        <TimeIndication activities={activities} />
 
         <CategoryList
           activities={activities}

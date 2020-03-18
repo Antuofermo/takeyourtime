@@ -20,6 +20,7 @@ const TitleStyled = styled.h1`
   margin: 32px 0 24px 0;
   text-align: center;
   font-size: 21px;
+  user-select: none;
 `
 
 const OpenModal = styled.button`

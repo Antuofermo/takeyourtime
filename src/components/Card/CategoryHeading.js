@@ -24,6 +24,7 @@ const CategoryStyled = styled.h1`
   color: white;
   box-shadow: 0 3px 2px goldenrod;
   border-radius: 4px 4px 0 0;
+  user-select: none;
   cursor: pointer;
 `
 
