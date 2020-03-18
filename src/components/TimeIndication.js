@@ -1,32 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
+import TimeLeft from './TimeLeft'
 
-export default function TimeRemaining({ activities }) {
+export default function TimeIndication({ activities }) {
   const timeRemaining = remainingHours(activities)
 
-  return timeRemaining >= 1 ? (
-    timeLeft()
+  return timeRemaining >= 0.5 ? (
+    <TimeLeft timeRemaining={timeRemaining} />
   ) : timeRemaining === 0 ? (
     <NoTimeLeftStyled>
       Day full! You don't have any hours remaining.
     </NoTimeLeftStyled>
   ) : (
-    <RemovehoursStyled>
-      You added too many hours to your day! Remove {hourOverflow(activities)}{' '}
-      hours or more before adding a new activity.
-    </RemovehoursStyled>
+    <HourOverflow>
+      You added too many hours to your day! Remove at least{' '}
+      {hourOverflow(activities)} hours before adding a new activity.
+    </HourOverflow>
   )
-
-  function timeLeft() {
-    return (
-      <TimeLeftStyled>
-        You still have{' '}
-        {timeRemaining % 1 !== 0 ? timeRemaining.toFixed(1) : timeRemaining}{' '}
-        {timeRemaining === 1 ? 'hour' : 'hours'} to add to your day, use{' '}
-        {timeRemaining === 1 ? 'it' : 'them'} wisely!
-      </TimeLeftStyled>
-    )
-  }
 
   function remainingHours(activities) {
     const sum = activities.reduce((sum, activityItem) => {
@@ -40,13 +30,6 @@ export default function TimeRemaining({ activities }) {
   }
 }
 
-const TimeLeftStyled = styled.p`
-  margin-top: 50px;
-  text-align: center;
-  margin: 30px;
-  user-select: none;
-`
-
 const NoTimeLeftStyled = styled.p`
   margin-top: 50px;
   text-align: center;
@@ -55,7 +38,7 @@ const NoTimeLeftStyled = styled.p`
   user-select: none;
 `
 
-const RemovehoursStyled = styled.div`
+const HourOverflow = styled.div`
   padding: 15px;
   border: 1px solid #b20238;
   border-radius: 4px;
