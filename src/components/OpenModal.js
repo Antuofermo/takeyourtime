@@ -25,15 +25,15 @@ const TitleStyled = styled.h1`
 `
 
 const OpenModal = styled.button`
-  background: #f5f5f5;
+  background: var(--body-background);
   border: none;
   display: block;
   margin: auto;
 `
 
 const AddStyled = styled.div`
-  border: 3px solid goldenrod;
-  background-color: #f5f5f5;
+  border: 3px solid var(--color-gold);
+  background-color: var(--body-background);
   font-size: 16px;
   height: 4em;
   width: 4em;
@@ -45,7 +45,7 @@ const AddStyled = styled.div`
   :before {
     content: '';
     display: block;
-    background-color: goldenrod;
+    background-color: var(--color-gold);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -67,7 +67,7 @@ const AddStyled = styled.div`
 
     :after,
     :before {
-      background-color: goldenrod;
+      background-color: var(--color-gold);
       animation-name: cross;
       animation-fill-mode: forwards;
       animation-duration: 0.2s;
@@ -75,7 +75,7 @@ const AddStyled = styled.div`
 
     @keyframes cross {
       from {
-        background-color: goldenrod;
+        background-color: var(--color-gold);
       }
       to {
         background-color: black;

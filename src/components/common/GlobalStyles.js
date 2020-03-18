@@ -14,6 +14,8 @@ export default createGlobalStyle`
 
   :root {
     --color-dark: #282828;
+    --color-gold: goldenrod;
+    --body-background: #f5f5f5;
   }
 
 `
