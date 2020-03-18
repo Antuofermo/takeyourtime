@@ -1,25 +1,28 @@
 import React, { useState } from 'react'
-import logo from './img/logo.png'
-import guidance from './img/guidance.png'
 import styled from 'styled-components/macro'
+import guidance from './img/guidance.png'
+import logo from './img/logo.png'
+import ModalGuide from './Guide/ModalGuide'
 
-export default function Header({ closeModal }) {
+export default function Header() {
   const [modalIsOpen, setIsOpen] = useState(false)
+
   return (
     <HeaderStyled>
       <AppName>Take Your Time</AppName>
       <Logo src={logo} />
-      <Help
-        modalIsOpen={modalIsOpen}
-        closeModal={closeModal}
-        src={guidance}
-        onClick={openGuidance}
-      />
+      <Help src={guidance} onClick={openGuide} />
+      <ModalGuide modalIsOpen={modalIsOpen} closeModal={closeModal} />
     </HeaderStyled>
   )
-  function openGuidance(event) {
+
+  function openGuide(event) {
     event.stopPropagation()
     setIsOpen(true)
+  }
+
+  function closeModal() {
+    setIsOpen(false)
   }
 }
 
@@ -35,7 +38,6 @@ const HeaderStyled = styled.section`
 `
 
 const AppName = styled.h1`
-  z-index: 1;
   font-size: 18px;
   padding: 12px;
   user-select: none;
@@ -47,8 +49,8 @@ const Logo = styled.img`
 `
 
 const Help = styled.img`
-  color: goldenrod;
-  position: Absolute;
+  color: var(--color-gold);
+  position: absolute;
   height: 25px;
   right: 5%;
   cursor: pointer;
