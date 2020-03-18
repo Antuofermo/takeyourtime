@@ -44,7 +44,7 @@ export default function Card({ activities, deleteActivity, category }) {
 
 const CardStyled = styled.div`
   margin: 19px 48px;
-  background: #fff;
+  background: var(--color-white);
 `
 
 const ActivityStyled = styled.div`

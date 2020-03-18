@@ -43,7 +43,7 @@ const CloseModal = styled.button`
   top: 2%;
 
   :hover {
-    color: white;
+    color: var(--color-black);
   }
 `
 

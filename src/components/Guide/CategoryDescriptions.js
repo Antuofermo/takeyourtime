@@ -21,7 +21,7 @@ export default function CategoryDescriptions() {
       <Description>
         <Category>Obligatory time </Category>
         <span>
-          Everything that is mandatory. This is your morning routing, your
+          Everything that is mandatory. This is your morning routine, your
           commute, eat, sleep etc.
         </span>
       </Description>

@@ -24,18 +24,18 @@ export default function ModalGuide({ modalIsOpen, closeModal }) {
 }
 const customStyles = {
   content: {
-    top: '30%',
+    top: '0%',
     left: '50%',
     right: 'auto',
+    height: '100vh',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%)',
     border: 'none',
     background: 'var(--color-dark)',
-    color: 'white',
+    color: 'var(--color-white)',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '20px',
   },
 }
 
@@ -51,10 +51,10 @@ const CloseModal = styled.button`
   margin-bottom: 20px;
   padding: 8px;
   font-size: 16px;
-  color: black;
-  background: White;
+  color: var=(--color-black);
+  background: var=(--color-white);
   border-radius: 4px;
-  border: 1px solid white;
+  border: 1px solid black;
   width: 70px;
   cursor: pointer;
   align-self: flex-end;

@@ -5,7 +5,7 @@ export default function AppDescription() {
   return (
     <Description>
       <p>
-        Take your Time, helps you schedule and categorize your daily activities.
+        Take your Time helps you schedule and categorize your daily activities.
         You can finally do what you never thought you had time for!
       </p>
       <p>
