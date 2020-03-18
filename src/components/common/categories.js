@@ -3,7 +3,7 @@ const categories = [
   'Self time',
   'Obligatory time',
   'Professional time',
-  'Non-productive time',
+  'Unproductive time',
 ]
 
 export default categories

@@ -24,7 +24,7 @@ export default function Header({ closeModal }) {
 }
 
 const HeaderStyled = styled.section`
-  background: #1a1919;
+  background: var(--color-dark);
   color: white;
   height: 100%;
   width: 100%;

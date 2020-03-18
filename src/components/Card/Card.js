@@ -44,10 +44,12 @@ export default function Card({ activities, deleteActivity, category }) {
 
 const CardStyled = styled.div`
   margin: 19px 48px;
+  background: #fff;
 `
 
 const ActivityStyled = styled.div`
   overflow-y: scroll;
   border-radius: 0 0 2px 2px;
-  border: 1px solid black;
+  border: 1px solid var(--color-dark);
+  box-shadow: 0 1px 2px grey;
 `

@@ -8,8 +8,12 @@ export default createGlobalStyle`
   body {
     margin: 0;
     font-family: Lucida, sans-serif; 
-    margin: 0; 
     width: 100vw; 
+    background: #f5f5f5;
+  }
+
+  :root {
+    --color-dark: #282828;
   }
 
 `

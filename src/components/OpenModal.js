@@ -21,10 +21,11 @@ const TitleStyled = styled.h1`
   text-align: center;
   font-size: 21px;
   user-select: none;
+  color: var(--color-dark);
 `
 
 const OpenModal = styled.button`
-  background: white;
+  background: #f5f5f5;
   border: none;
   display: block;
   margin: auto;
@@ -32,7 +33,7 @@ const OpenModal = styled.button`
 
 const AddStyled = styled.div`
   border: 3px solid goldenrod;
-  background-color: #fff;
+  background-color: #f5f5f5;
   font-size: 16px;
   height: 4em;
   width: 4em;

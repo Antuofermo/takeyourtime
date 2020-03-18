@@ -35,7 +35,7 @@ export default function ModalForm({
 
 const CloseModal = styled.button`
   border: none;
-  background: #1a1919;
+  background: var(--color-dark);
   color: grey;
   font-size: 18px;
   position: absolute;
@@ -56,6 +56,6 @@ const customStyles = {
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
     border: 'none',
-    background: '#1a1919',
+    background: 'var(--color-dark)',
   },
 }
