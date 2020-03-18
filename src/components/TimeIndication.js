@@ -22,7 +22,7 @@ export default function TimeIndication({ activities }) {
     const sum = activities.reduce((sum, activityItem) => {
       return sum + activityItem.hours
     }, 0)
-    return 24 - sum
+    return 25 - sum
   }
 
   function hourOverflow() {

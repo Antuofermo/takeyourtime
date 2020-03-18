@@ -16,7 +16,7 @@ const CategoryStyled = styled.h1`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
+  padding: 20px;
   font-size: 18px;
   height: 48px;
   margin: 0;

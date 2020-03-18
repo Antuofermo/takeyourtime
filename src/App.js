@@ -18,7 +18,7 @@ function App() {
 
   return (
     <AppGrid>
-      <Header />
+      <Header modalIsOpen={modalIsOpen} />
 
       <ScrollContainer>
         <OpenModal setIsOpen={setIsOpen} />
@@ -66,7 +66,7 @@ const ScrollContainer = styled.main`
 `
 
 const Footer = styled.section`
-  background: #1a1919;
+  background: var(--color-dark);
   height: 100%;
 `
 
