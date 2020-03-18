@@ -29,6 +29,7 @@ export default function Activity({ activity, deleteActivity }) {
 const ListStyled = styled.ul`
   display: flex;
   padding: 0;
+  user-select: none;
 `
 
 const NameStyled = styled.li`
