@@ -10,7 +10,7 @@ export default function CategoryHeading({ category, hoursSum, expand }) {
       <span>{category}</span>
       <SpanStyled>
         {hoursSum < 1 ? hoursSum * 60 : hoursSum}
-        {hoursSum < 1 ? ' min' : hoursSum === 1 ? ' hour' : ' hours'}
+        {hoursSum < 1 ? ' min' : ' h'}
       </SpanStyled>
     </CategoryStyled>
   )
