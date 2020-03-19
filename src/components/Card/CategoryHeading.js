@@ -1,22 +1,36 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import expandLess from '../img/expandLess.png'
+import expandMore from '../img/expandMore.png'
 
 export default function CategoryHeading({ category, hoursSum }) {
+  // const [expandArrow, setexpandArrow] = useState(expandLess)
+
   return (
-    <CategoryStyled>
+    <CategoryStyled onClick={handleExpand}>
+      <Arrow src={expandLess} id="arrow" />
       <span>{category}</span>
       <SpanStyled>
         {hoursSum ? hoursSum : '0'} {hoursSum < 1 ? 'min' : 'h'}
       </SpanStyled>
     </CategoryStyled>
   )
+
+  function handleExpand() {
+    const imgArrow = document.getElementById('arrow')
+    imgArrow.src = imgArrow.src === expandLess ? expandMore : expandLess
+  }
 }
 
+const Arrow = styled.img`
+  height: 10px;
+`
+
 const CategoryStyled = styled.h1`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 25px auto 40px;
   align-items: center;
-  padding: 20px;
+  padding: 0 20px 0 10px;
   font-size: 18px;
   height: 48px;
   margin: 0;
