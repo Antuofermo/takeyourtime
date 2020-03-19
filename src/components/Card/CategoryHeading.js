@@ -3,23 +3,16 @@ import styled from 'styled-components/macro'
 import expandLess from '../img/expandLess.png'
 import expandMore from '../img/expandMore.png'
 
-export default function CategoryHeading({ category, hoursSum }) {
-  // const [expandArrow, setexpandArrow] = useState(expandLess)
-
+export default function CategoryHeading({ category, hoursSum, expand }) {
   return (
-    <CategoryStyled onClick={handleExpand}>
-      <Arrow src={expandLess} id="arrow" />
+    <CategoryStyled>
+      <Arrow src={expand ? expandMore : expandLess} />
       <span>{category}</span>
       <SpanStyled>
         {hoursSum ? hoursSum : '0'} {hoursSum < 1 ? 'min' : 'h'}
       </SpanStyled>
     </CategoryStyled>
   )
-
-  function handleExpand() {
-    const imgArrow = document.getElementById('arrow')
-    imgArrow.src = imgArrow.src === expandLess ? expandMore : expandLess
-  }
 }
 
 const Arrow = styled.img`
