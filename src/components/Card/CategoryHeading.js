@@ -20,7 +20,7 @@ const CategoryStyled = styled.h1`
   font-size: 18px;
   height: 48px;
   margin: 0;
-  background: #1a1919;
+  background: var(--color-dark);
   color: white;
   box-shadow: 0 3px 2px goldenrod;
   border-radius: 4px 4px 0 0;
