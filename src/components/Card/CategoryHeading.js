@@ -22,9 +22,9 @@ const Arrow = styled.img`
 
 const CategoryStyled = styled.h1`
   display: grid;
-  grid-template-columns: 25px auto 40px;
+  grid-template-columns: 25px auto 45px;
   align-items: center;
-  padding: 0 20px 0 10px;
+  padding: 0 10px;
   font-size: 18px;
   height: 48px;
   margin: 0;
