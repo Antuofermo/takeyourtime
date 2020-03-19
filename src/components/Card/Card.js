@@ -15,7 +15,7 @@ export default function Card({ activities, deleteActivity, category }) {
 
   return (
     <CardStyled onClick={toggle}>
-      <CategoryHeading category={category} hoursSum={hoursSum} />
+      <CategoryHeading category={category} hoursSum={hoursSum} expand={on} />
       {on && (
         <ActivityStyled>
           {activities
