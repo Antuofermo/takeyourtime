@@ -9,7 +9,8 @@ export default function CategoryHeading({ category, hoursSum, expand }) {
       <Arrow src={expand ? expandMore : expandLess} />
       <span>{category}</span>
       <SpanStyled>
-        {hoursSum ? hoursSum : '0'} {hoursSum < 1 ? 'min' : 'h'}
+        {hoursSum < 1 ? hoursSum * 60 : hoursSum}
+        {hoursSum < 1 ? ' min' : hoursSum === 1 ? ' hour' : ' hours'}
       </SpanStyled>
     </CategoryStyled>
   )
