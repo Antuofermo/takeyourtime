@@ -11,13 +11,16 @@ export default function ModalGuide({ modalIsOpen, closeModal }) {
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
       style={customStyles}
+      data-cy="guide-modal"
     >
       <AppName>Take Your Time</AppName>
       <Logo src={logo} />
       <AppDescription />
       <CategoryDescriptions />
       <FooterModal>
-        <CloseModal onClick={closeModal}>Got it!</CloseModal>
+        <CloseModal data-cy="close-guide" onClick={closeModal}>
+          Got it!
+        </CloseModal>
       </FooterModal>
     </Modal>
   )

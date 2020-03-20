@@ -11,7 +11,7 @@ export default function Header() {
     <HeaderStyled>
       <AppName>Take Your Time</AppName>
       <Logo src={logo} />
-      <Help src={guidance} onClick={openGuide} />
+      <Help src={guidance} onClick={openGuide} alt="App guide" />
       <ModalGuide modalIsOpen={modalIsOpen} closeModal={closeModal} />
     </HeaderStyled>
   )
