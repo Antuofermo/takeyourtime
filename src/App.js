@@ -65,7 +65,7 @@ const ScrollContainer = styled.main`
   overflow-y: scroll;
 `
 
-const Footer = styled.section`
+const Footer = styled.footer`
   background: var(--color-dark);
   height: 100%;
 `
