@@ -5,7 +5,7 @@ import expandMore from '../img/expandMore.png'
 
 export default function CategoryHeading({ category, hoursSum, expand }) {
   return (
-    <CategoryStyled>
+    <CategoryStyled data-cy="category">
       <Arrow src={expand ? expandMore : expandLess} />
       <span>{category}</span>
       <SpanStyled>

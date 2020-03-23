@@ -17,7 +17,9 @@ export default function ModalForm({
       onRequestClose={closeModal}
       style={customStyles}
     >
-      <CloseModal onClick={closeModal}>&times;</CloseModal>
+      <CloseModal data-cy="close-form" onClick={closeModal}>
+        &times;
+      </CloseModal>
       <Form categories={categories} onSubmit={addActivity} />
     </Modal>
   )

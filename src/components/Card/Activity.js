@@ -15,7 +15,9 @@ export default function Activity({ activity, deleteActivity }) {
             : ' hours'}
           )
         </SpanStyled>
-        <BtnDelete onClick={handleDelete}>&times;</BtnDelete>
+        <BtnDelete data-cy="delete-activity" onClick={handleDelete}>
+          &times;
+        </BtnDelete>
       </NameStyled>
     </ListStyled>
   )
@@ -48,6 +50,6 @@ const BtnDelete = styled.span`
   cursor: pointer;
 
   :hover {
-    color: black;
+    color: white;
   }
 `
