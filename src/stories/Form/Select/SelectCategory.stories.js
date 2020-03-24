@@ -8,11 +8,11 @@ export default {
 }
 
 const categories = [
-  'Professional time',
-  'Obligatory time',
   'Personal time',
   'Self time',
-  'Non-productive time',
+  'Professional time',
+  'Obligatory time',
+  'Unproductive time',
 ]
 
 export const CategorySelect = () => <Select categories={categories} />
