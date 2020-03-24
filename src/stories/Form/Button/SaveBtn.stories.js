@@ -22,6 +22,11 @@ const SaveBtnStyled = styled.button`
   :hover {
     box-shadow: none;
   }
+
+  &:disabled {
+    opacity: 0.6;
+    box-shadow: none;
+  }
 `
 
 export const SaveBtn = () => (

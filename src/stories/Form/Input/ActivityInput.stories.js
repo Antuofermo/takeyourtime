@@ -2,7 +2,7 @@ import { action } from '@storybook/addon-actions'
 import styled from 'styled-components/macro'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
-import Input from '../../../components/Form/Input/ActivityInput'
+import Input from '../../../components/Form/Inputs/ActivityInput'
 export default {
   title: 'Components/Form/Input',
   decorators: [withKnobs],

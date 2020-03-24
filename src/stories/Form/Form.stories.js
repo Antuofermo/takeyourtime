@@ -1,6 +1,6 @@
 import { withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
-import Form from '../../components/Form/Form'
+import Form from '../../components/Form/ModalForm'
 export default {
   title: 'Components/Form/Form',
   decorators: [withKnobs],
@@ -8,11 +8,11 @@ export default {
 }
 
 const categories = [
-  'Professional time',
-  'Obligatory time',
   'Personal time',
   'Self time',
-  'Non-productive time',
+  'Obligatory time',
+  'Professional time',
+  'Unproductive time',
 ]
 
 export const Form = () => <Form categories={categories} />
