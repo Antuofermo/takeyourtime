@@ -6,9 +6,11 @@ import ActivityInput from './Inputs/ActivityInput'
 import TimeInput from './Inputs/TimeInput'
 import CategorySelect from './Select/CategorySelect'
 import initialState from '../../utils'
+import Confirmation from './Confirmation'
 
 export default function Form({ categories, onSubmit }) {
   const [inputValues, setInputValues] = useState(initialState)
+  const [showConfirmation, setShowConfirmation] = useState(false)
 
   return (
     <FormStyled onSubmit={handleSubmit}>
@@ -30,6 +32,7 @@ export default function Form({ categories, onSubmit }) {
         value={inputValues.hours}
       />
       <SaveBtn disabled={!isValidInput()} />
+      {showConfirmation && <Confirmation />}
     </FormStyled>
   )
 
@@ -47,6 +50,7 @@ export default function Form({ categories, onSubmit }) {
       onSubmit({ ...inputValues, hours: Number(inputValues.hours) })
       setInputValues(initialState)
       form[0] && form[0].focus()
+      setShowConfirmation(true)
     }
   }
 
