@@ -51,6 +51,7 @@ export default function Form({ categories, onSubmit }) {
       setInputValues(initialState)
       form[0] && form[0].focus()
       setShowConfirmation(true)
+      setTimeout(() => setShowConfirmation(false), 3000)
     }
   }
 
