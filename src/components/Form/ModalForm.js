@@ -43,9 +43,10 @@ const CloseModal = styled.button`
   position: absolute;
   left: 88%;
   top: 2%;
+  cursor: pointer;
 
   :hover {
-    color: var(--color-black);
+    color: white;
   }
 `
 
