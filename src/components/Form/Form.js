@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import logo from '../img/logo.png'
 import SaveBtn from './Button/SaveBtn'
@@ -11,6 +11,13 @@ import Confirmation from './Confirmation'
 export default function Form({ categories, onSubmit }) {
   const [inputValues, setInputValues] = useState(initialState)
   const [showConfirmation, setShowConfirmation] = useState(false)
+
+  useEffect(() => {
+    if (showConfirmation) {
+      const timer = setTimeout(() => setShowConfirmation(false), 1000)
+      return () => clearTimeout(timer)
+    }
+  }, [showConfirmation])
 
   return (
     <FormStyled onSubmit={handleSubmit}>
@@ -51,7 +58,6 @@ export default function Form({ categories, onSubmit }) {
       setInputValues(initialState)
       form[0] && form[0].focus()
       setShowConfirmation(true)
-      setTimeout(() => setShowConfirmation(false), 1000)
     }
   }
 
