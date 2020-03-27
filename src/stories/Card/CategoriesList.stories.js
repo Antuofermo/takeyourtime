@@ -7,6 +7,7 @@ export default {
       <div
         style={{
           padding: 40,
+          width: 500,
         }}
       >
         {renderCategoryList()}
