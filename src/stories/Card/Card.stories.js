@@ -1,10 +1,19 @@
-import { withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import Card from '../../components/Card/Card'
 export default {
-  title: 'Components/Card/Cards',
-  decorators: [withKnobs],
+  title: 'Components/Card/Card',
   component: Card,
+  decorators: [
+    renderCard => (
+      <div
+        style={{
+          padding: 40,
+        }}
+      >
+        {renderCard()}
+      </div>
+    ),
+  ],
 }
 
 const categories = [
@@ -17,6 +26,6 @@ const categories = [
 
 const initialData = [{ category: 'Professional time', name: 'Work', hours: 8 }]
 
-export const Categories = () => (
+export const Category = () => (
   <Card categories={categories} activities={initialData} />
 )

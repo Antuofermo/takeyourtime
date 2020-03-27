@@ -1,10 +1,20 @@
 import { action } from '@storybook/addon-actions'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import React from 'react'
 import ActivityInput from '../../../components/Form/Inputs/ActivityInput'
 export default {
   title: 'Components/Form/ActivityInput',
-  decorators: [withKnobs],
+  decorators: [
+    renderActivityInput => (
+      <div
+        style={{
+          padding: 40,
+        }}
+      >
+        {renderActivityInput()}
+      </div>
+    ),
+  ],
   component: ActivityInput,
 }
 

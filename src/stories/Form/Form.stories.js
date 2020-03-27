@@ -1,11 +1,20 @@
 import { action } from '@storybook/addon-actions'
-import { withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import Form from '../../components/Form/Form'
 
 export default {
   title: 'Components/Form/Form',
-  decorators: [withKnobs],
+  decorators: [
+    renderForm => (
+      <div
+        style={{
+          padding: 40,
+        }}
+      >
+        {renderForm()}
+      </div>
+    ),
+  ],
   component: Form,
 }
 

@@ -1,11 +1,21 @@
 import { action } from '@storybook/addon-actions'
 import styled from 'styled-components/macro'
-import { boolean, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text } from '@storybook/addon-knobs'
 import React from 'react'
 import Button from '../../../components/Form/Button/SaveBtn'
 export default {
   title: 'Components/Form/Button',
-  decorators: [withKnobs],
+  decorators: [
+    renderButton => (
+      <div
+        style={{
+          padding: 40,
+        }}
+      >
+        {renderButton()}
+      </div>
+    ),
+  ],
   component: Button,
 }
 

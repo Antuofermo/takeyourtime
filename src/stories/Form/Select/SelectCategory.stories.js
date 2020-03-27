@@ -1,9 +1,18 @@
-import { withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import Select from '../../../components/Form/Select/CategorySelect'
 export default {
   title: 'Components/Form/Select',
-  decorators: [withKnobs],
+  decorators: [
+    renderSelect => (
+      <div
+        style={{
+          padding: 40,
+        }}
+      >
+        {renderSelect()}
+      </div>
+    ),
+  ],
   component: Select,
 }
 

@@ -1,10 +1,20 @@
 import { action } from '@storybook/addon-actions'
-import { text, withKnobs } from '@storybook/addon-knobs'
+import { text } from '@storybook/addon-knobs'
 import React from 'react'
 import TimeInput from '../../../components/Form/Inputs/TimeInput'
 export default {
   title: 'Components/Form/TimeInput',
-  decorators: [withKnobs],
+  decorators: [
+    renderTimeInput => (
+      <div
+        style={{
+          padding: 40,
+        }}
+      >
+        {renderTimeInput()}
+      </div>
+    ),
+  ],
   component: TimeInput,
 }
 

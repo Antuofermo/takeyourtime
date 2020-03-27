@@ -1,18 +1,27 @@
-import { withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import CategoryList from '../../components/Card/CategoryList'
 export default {
   title: 'Components/Card/CategoryList',
-  decorators: [withKnobs],
+  decorators: [
+    renderCategoryList => (
+      <div
+        style={{
+          padding: 40,
+        }}
+      >
+        {renderCategoryList()}
+      </div>
+    ),
+  ],
   component: CategoryList,
 }
 
 const categories = [
-  'Professional time',
-  'Obligatory time',
   'Personal time',
   'Self time',
-  'Non-productive time',
+  'Obligatory time',
+  'Professional time',
+  'Unproductive time',
 ]
 
 const initialData = [
