@@ -2,9 +2,9 @@ import { action } from '@storybook/addon-actions'
 import styled from 'styled-components/macro'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
-import Input from '../../../components/Form/Inputs/ActivityInput'
+import Input from '../../../components/Form/Inputs/TimeInput'
 export default {
-  title: 'Components/Form/Input/ActivityInput',
+  title: 'Components/Form/Input/TimeInput',
   decorators: [withKnobs],
   component: Input,
 }
@@ -14,23 +14,24 @@ const InputStyled = styled.input`
   border-radius: 50px;
   padding: 15px 40px;
   margin-bottom: 20px;
-  width: 250px;
+  width: 200px;
   height: 48px;
+  font-size: 15px;
 
   ::placeholder {
-    color: black;
-    font-size: 14px;
+    text-align: center;
   }
 `
-
-export const ActivityInput = () => (
-  <Input
+export const TimeInput = () => (
+  <InputStyled
     label={text('Label', 'submit')}
     onSubmit={action('send')}
-    style={InputStyled}
-    disabled={boolean('Disabled', false)}
-    maxLength="60"
-    placeholder="ex. Learn React"
-    autoFocus
+    name="hours"
+    placeholder="0.0"
+    id="hours-input"
+    type="number"
+    step="0.50"
+    min="0.50"
+    max="24"
   />
 )
