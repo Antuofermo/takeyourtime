@@ -1,8 +1,10 @@
+import { action } from '@storybook/addon-actions'
 import { withKnobs } from '@storybook/addon-knobs'
 import React from 'react'
 import Form from '../../components/Form/Form'
+
 export default {
-  title: 'Components/Form/Form',
+  title: 'Components/Form',
   decorators: [withKnobs],
   component: Form,
 }
@@ -15,4 +17,6 @@ const categories = [
   'Unproductive time',
 ]
 
-export const Form = () => <Form categories={categories} />
+export const FormDefault = () => (
+  <Form categories={categories} onSave={action('Save')} />
+)
