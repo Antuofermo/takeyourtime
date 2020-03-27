@@ -12,7 +12,7 @@ export default function Form({ categories, onSubmit }) {
 
   return (
     <FormStyled onSubmit={handleSubmit}>
-      <Logo src={logo} />
+      <Logo />
       <ActivityInput
         name="name"
         onChange={handleChange}
@@ -56,6 +56,9 @@ export default function Form({ categories, onSubmit }) {
   }
 }
 
+function Logo() {
+  return <img src={logo} />
+}
 const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
@@ -63,11 +66,11 @@ const FormStyled = styled.form`
   height: 500px;
   padding-top: 10px;
   width: 100vw;
-`
 
-const Logo = styled.img`
-  position: absolute;
-  z-index: -1;
-  width: 200px;
-  height: 200px;
+  img {
+    position: absolute;
+    z-index: -1;
+    width: 200px;
+    height: 200px;
+  }
 `
