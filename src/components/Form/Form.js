@@ -68,7 +68,7 @@ export default function Form({ categories, onSubmit }) {
 }
 
 function Logo() {
-  return <img src={logo} />
+  return <img src={logo} alt="" />
 }
 const FormStyled = styled.form`
   display: flex;
