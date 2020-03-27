@@ -5,15 +5,7 @@ import Form from '../../components/Form/Form'
 export default {
   title: 'Components/Form/Form',
   decorators: [
-    renderForm => (
-      <div
-        style={{
-          padding: 40,
-        }}
-      >
-        {renderForm()}
-      </div>
-    ),
+    renderForm => <div style={{ paddingTop: '40px' }}>{renderForm()}</div>,
   ],
   component: Form,
 }
