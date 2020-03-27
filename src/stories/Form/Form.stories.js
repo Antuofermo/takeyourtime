@@ -4,7 +4,7 @@ import React from 'react'
 import Form from '../../components/Form/Form'
 
 export default {
-  title: 'Components/Form',
+  title: 'Components/Form/Form',
   decorators: [withKnobs],
   component: Form,
 }
