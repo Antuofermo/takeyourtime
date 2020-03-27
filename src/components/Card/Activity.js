@@ -50,6 +50,6 @@ const BtnDelete = styled.span`
   cursor: pointer;
 
   :hover {
-    color: white;
+    color: black;
   }
 `
