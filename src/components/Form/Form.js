@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/macro'
 import logo from '../img/logo.png'
 import SaveBtn from './Button/SaveBtn'
@@ -12,9 +12,16 @@ export default function Form({ categories, onSubmit }) {
   const [inputValues, setInputValues] = useState(initialState)
   const [showConfirmation, setShowConfirmation] = useState(false)
 
+  useEffect(() => {
+    if (showConfirmation) {
+      const timer = setTimeout(() => setShowConfirmation(false), 1000)
+      return () => clearTimeout(timer)
+    }
+  }, [showConfirmation])
+
   return (
     <FormStyled onSubmit={handleSubmit}>
-      <Logo src={logo} />
+      <Logo />
       <ActivityInput
         name="name"
         onChange={handleChange}
@@ -51,7 +58,6 @@ export default function Form({ categories, onSubmit }) {
       setInputValues(initialState)
       form[0] && form[0].focus()
       setShowConfirmation(true)
-      setTimeout(() => setShowConfirmation(false), 1000)
     }
   }
 
@@ -61,6 +67,9 @@ export default function Form({ categories, onSubmit }) {
   }
 }
 
+function Logo() {
+  return <img src={logo} alt="" />
+}
 const FormStyled = styled.form`
   display: flex;
   flex-direction: column;
@@ -68,11 +77,11 @@ const FormStyled = styled.form`
   height: 500px;
   padding-top: 10px;
   width: 100vw;
-`
 
-const Logo = styled.img`
-  position: absolute;
-  z-index: -1;
-  width: 200px;
-  height: 200px;
+  img {
+    position: absolute;
+    z-index: -1;
+    width: 200px;
+    height: 200px;
+  }
 `
