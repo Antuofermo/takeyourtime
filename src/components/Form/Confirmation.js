@@ -19,7 +19,7 @@ const Success = styled.p`
   color: var(--color-gold);
   font-size: 18px;
   background-color: var(--color-white);
-  animation: 1s ease-in confirmation;
+  animation: 0.5s ease-in confirmation;
 
   @keyframes confirmation {
     0% {

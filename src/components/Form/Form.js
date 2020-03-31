@@ -14,7 +14,7 @@ export default function Form({ categories, onSubmit }) {
 
   useEffect(() => {
     if (showConfirmation) {
-      const timer = setTimeout(() => setShowConfirmation(false), 1000)
+      const timer = setTimeout(() => setShowConfirmation(false), 500)
       return () => clearTimeout(timer)
     }
   }, [showConfirmation])
